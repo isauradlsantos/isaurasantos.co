@@ -149,7 +149,7 @@
       position: fixed;
       left: 20px;
       right: 20px;
-      bottom: 20px;
+      bottom: 120px;
       background: rgba(0, 0, 0, 0.9);
       border: 1px solid #333;
       border-radius: 12px;
@@ -181,6 +181,24 @@
 
     .cookie-banner button:hover {
       opacity: 0.85;
+    }
+
+    .cookie-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .cookie-deny {
+      background: transparent;
+      color: #ffffff;
+      border: 1px solid #ffffff;
+    }
+
+    .cookie-deny:hover {
+      background: rgba(255, 255, 255, 0.1);
+      opacity: 1;
     }
 
     .social-icon {
@@ -305,6 +323,7 @@
         left: 12px;
         right: 12px;
         padding: 16px;
+        bottom: 100px;
       }
 
       .footer-row {
@@ -371,14 +390,18 @@
   </div>
 
   <div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite">
-    <p>i use a tiny functional cookie to remember your consent. learn more in the cookie policy.</p>
-    <button id="cookie-accept">accept</button>
+    <p>i use a tiny functional cookie to remember your choice. opt into or reject non-essential cookies.</p>
+    <div class="cookie-actions">
+      <button id="cookie-accept">accept non-essential</button>
+      <button id="cookie-deny" class="cookie-deny">deny non-essential</button>
+    </div>
   </div>
 
   <script>
     (function () {
       const banner = document.getElementById('cookie-banner');
       const acceptBtn = document.getElementById('cookie-accept');
+      const denyBtn = document.getElementById('cookie-deny');
       const consentKey = 'isaura-cookie-consent';
 
       if (!localStorage.getItem(consentKey)) {
@@ -387,6 +410,11 @@
 
       acceptBtn.addEventListener('click', () => {
         localStorage.setItem(consentKey, 'accepted');
+        banner.style.display = 'none';
+      });
+
+      denyBtn.addEventListener('click', () => {
+        localStorage.setItem(consentKey, 'denied');
         banner.style.display = 'none';
       });
     })();
