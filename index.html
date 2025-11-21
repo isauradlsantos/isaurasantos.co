@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+  <meta name="theme-color" content="#000000"/>
+  <meta name="description" content="loop remote - growth & marketing consulting"/>
+  <title>loop remote</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #000000;
+      color: #ffffff;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: 40px;
+    }
+
+    .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .main-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      align-self: flex-start;
+    }
+
+    .main-text h1 {
+      font-size: 48px;
+      font-weight: 400;
+      line-height: 1.4;
+      margin: 0;
+      letter-spacing: -0.02em;
+      text-align: left;
+    }
+
+    .main-text h1 a {
+      color: inherit;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .main-text h1 a:hover {
+      opacity: 0.7;
+    }
+
+    .music-icons {
+      display: inline-flex;
+      gap: 16px;
+      align-items: center;
+      margin-left: 16px;
+      vertical-align: middle;
+    }
+
+    .music-icon {
+      width: 24px;
+      height: 24px;
+      stroke: #ffffff;
+      fill: none;
+      stroke-width: 1.5;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .music-icon:hover {
+      opacity: 0.7;
+    }
+
+    .artist-line {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .artist-menu {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      transition: opacity 0.2s;
+      width: fit-content;
+    }
+
+    .artist-menu:hover {
+      opacity: 0.7;
+    }
+
+    .artist-menu:hover .artist-submenu,
+    .artist-submenu:hover {
+      display: block;
+    }
+
+    .artist-submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      margin-top: 0;
+      padding-top: 12px;
+      padding-bottom: 4px;
+      background-color: transparent;
+      z-index: 1000;
+      min-width: 120px;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .artist-submenu::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -20px;
+      right: -20px;
+      height: 12px;
+      background: transparent;
+    }
+
+    .artist-submenu a {
+      display: block;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.6;
+      letter-spacing: -0.02em;
+      padding: 6px 0;
+      transition: opacity 0.2s;
+      white-space: nowrap;
+    }
+
+    .artist-submenu a:hover {
+      opacity: 0.7;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 24px;
+      align-self: flex-start;
+      margin-top: auto;
+      padding-top: 60px;
+    }
+
+    .social-icon {
+      width: 24px;
+      height: 24px;
+      stroke: #ffffff;
+      fill: none;
+      stroke-width: 1.5;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .social-icon:hover {
+      opacity: 0.7;
+    }
+
+    .social-icon.email {
+      stroke: #ffffff;
+      fill: none;
+    }
+
+    .social-link {
+      display: inline-block;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .book-call {
+      display: inline-block;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      transition: opacity 0.2s;
+      cursor: pointer;
+      line-height: 24px;
+    }
+
+    .book-call:hover {
+      opacity: 0.7;
+    }
+
+    .music-link {
+      display: inline-block;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 24px;
+      }
+
+      .main-text h1 {
+        font-size: 36px;
+      }
+
+      .social-icons {
+        gap: 20px;
+      }
+
+      .social-icon {
+        width: 20px;
+        height: 20px;
+      }
+
+      .music-icon {
+        width: 20px;
+        height: 20px;
+      }
+
+      .music-icons {
+        gap: 12px;
+        margin-left: 12px;
+      }
+
+      .artist-submenu a {
+        font-size: 18px;
+      }
+
+      .book-call {
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <div class="main-text">
+      <h1><a href="http://loopremote.com" target="_blank" rel="noopener noreferrer">loop remote</a></h1>
+      <h1><a href="https://www.lazy-ops.com" target="_blank" rel="noopener noreferrer">growth & marketing consulting</a></h1>
+      <h1 class="artist-menu">
+        my artist alter ego
+        <div class="artist-submenu">
+          <a href="https://open.spotify.com/artist/2oiBFya19iAwi0SCaltq1F?si=amwLQFgAQ7O9e4vRUuX6gA" target="_blank" rel="noopener noreferrer">spotify</a>
+          <a href="https://music.apple.com/pt/artist/isaura/328623554?l=en-GB" target="_blank" rel="noopener noreferrer">apple music</a>
+          <a href="https://tidal.com/artist/3642913" target="_blank" rel="noopener noreferrer">tidal</a>
+          <a href="https://www.youtube.com/@isauramusic" target="_blank" rel="noopener noreferrer">youtube</a>
+        </div>
+      </h1>
+    </div>
+
+    <div class="social-icons">
+      <a href="mailto:isauraconsulting@gmail.com" class="social-link">
+        <svg class="social-icon email" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="5" width="18" height="14" rx="2" ry="2"/>
+          <path d="M3 7l9 6 9-6"/>
+        </svg>
+      </a>
+      <a href="https://www.linkedin.com/in/isaurasantos/" target="_blank" rel="noopener noreferrer" class="social-link">
+        <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+          <circle cx="4" cy="4" r="2"/>
+        </svg>
+      </a>
+      <a href="https://www.instagram.com/isauramusic/" target="_blank" rel="noopener noreferrer" class="social-link">
+        <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="1.5"/>
+        </svg>
+      </a>
+      <a href="https://tidycal.com/isaurasantos/30-minute-meeting-with-isaura" target="_blank" rel="noopener noreferrer" class="book-call">book a call</a>
+    </div>
+  </div>
+</body>
+</html>
