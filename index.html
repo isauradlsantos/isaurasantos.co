@@ -310,8 +310,26 @@
         margin-left: 12px;
       }
 
+      .artist-menu {
+        display: block;
+      }
+
+      .artist-submenu {
+        display: block;
+        position: static;
+        margin-top: 8px;
+        padding-top: 0;
+        padding-bottom: 0;
+        text-align: right;
+      }
+
+      .artist-submenu::before {
+        display: none;
+      }
+
       .artist-submenu a {
         font-size: 18px;
+        opacity: 0.7;
       }
 
       .book-call {
