@@ -74,6 +74,19 @@
   const statsGrid = document.querySelector('.stats-grid');
   if (statsGrid) statsObserver.observe(statsGrid);
 
+  // Meta Pixel: track leads on external booking links
+  const trackLead = () => {
+    if (typeof window !== 'undefined' && window.fbq) {
+      window.fbq('track', 'Lead');
+    }
+  };
+
+  document
+    .querySelectorAll('a[href*="tidycal.com/isaurasantos/twnya-session"]')
+    .forEach((link) => {
+      link.addEventListener('click', trackLead);
+    });
+
   // Photo gallery slider
   const slider = document.querySelector('.photo-slider');
   if (slider) {
