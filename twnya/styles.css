@@ -393,6 +393,11 @@ strong { font-weight: 600; color: var(--purple); }
   max-width: 480px;
 }
 
+.cta-reassurance-strong {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
 .centered .cta-reassurance { text-align: center; }
 
 /* =============================================
@@ -436,6 +441,14 @@ strong { font-weight: 600; color: var(--purple); }
   margin-bottom: 8px;
 }
 
+.section-lead + .prose {
+  margin-top: 16px;
+}
+
+.prose + .section-lead {
+  margin-top: 16px;
+}
+
 .section-lead-accent {
   font-size: clamp(21px, 2.8vw, 28px);
   font-weight: 600;
@@ -462,6 +475,10 @@ strong { font-weight: 600; color: var(--purple); }
   letter-spacing: -0.01em;
 }
 
+.prose + .section-anchor {
+  margin-top: 24px;
+}
+
 .subsection-label {
   font-size: 11px;
   font-weight: 600;
@@ -483,6 +500,10 @@ strong { font-weight: 600; color: var(--purple); }
 }
 
 .prose p:last-child { margin-bottom: 0; }
+
+.prose-gap-top {
+  margin-top: 16px;
+}
 
 .quiet-emphasis {
   font-size: 17px;
@@ -507,6 +528,11 @@ strong { font-weight: 600; color: var(--purple); }
   text-transform: uppercase;
   color: var(--text-tertiary);
   margin-bottom: 16px;
+}
+
+.paragraph-gap-top {
+  margin-top: 16px;
+  margin-bottom: 4px;
 }
 
 .credibility-grid {
@@ -567,6 +593,7 @@ strong { font-weight: 600; color: var(--purple); }
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 10px;
   }
+  .hide-mobile { display: none; }
 }
 
 /* =============================================
@@ -1240,7 +1267,7 @@ strong { font-weight: 600; color: var(--purple); }
   .nav-links { display: none; }
   .mobile-bar { display: block; }
 
-  .section { padding: 72px 0; }
+  .section { padding: 56px 0; }
 
   .hero {
     padding: 96px 0 72px;
@@ -1296,6 +1323,17 @@ strong { font-weight: 600; color: var(--purple); }
   .check-list li::after { left: 3px; top: 13px; font-size: 10px; }
   .x-list li { font-size: 15px; padding-left: 28px; }
   .x-list li::before { font-size: 12px; }
+
+  .page-content {
+    display: flex;
+    flex-direction: column;
+  }
+  #videos { order: 99; }
+
+  .video-grid-about { grid-template-columns: repeat(2, 1fr); }
+
+  .section-lead + .prose { margin-top: 10px; }
+  .prose + .section-lead { margin-top: 10px; }
 
   .section-final { padding-bottom: 140px; }
 }
