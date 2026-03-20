@@ -412,6 +412,11 @@ strong { font-weight: 600; color: var(--purple); }
   border-top: 1px solid var(--border-light);
 }
 
+/* Reduce gap between Stats and the first video section */
+#stats + #shorts {
+  padding: 40px 0;
+}
+
 .section-label {
   font-size: 11px;
   font-weight: 600;
@@ -594,6 +599,28 @@ strong { font-weight: 600; color: var(--purple); }
     gap: 10px;
   }
   .hide-mobile { display: none; }
+
+  /* Shorts: mobile-only sizing + tighter spacing */
+  #shorts {
+    padding: 48px 0;
+  }
+
+  #stats + #shorts {
+    padding: 24px 0;
+  }
+
+  #shorts + #photos {
+    padding: 24px 0;
+  }
+
+  #shorts .video-grid-about {
+    margin-top: 0;
+  }
+
+  #shorts .video-embed {
+    width: 90%;
+    max-width: 340px;
+  }
 }
 
 /* =============================================
@@ -1061,6 +1088,37 @@ strong { font-weight: 600; color: var(--purple); }
   width: 100% !important;
   height: 100% !important;
   border: 0;
+}
+
+/* Shorts: make the embed noticeably smaller without cropping */
+#shorts .video-grid-about {
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+#shorts .video-embed {
+  width: 30%;
+  /* Let the <video> define height based on its real aspect ratio */
+  aspect-ratio: auto;
+  padding-bottom: 0;
+  overflow: visible; /* avoid clipping letterboxing (we use contain) */
+}
+
+#shorts .video-embed .shorts-video {
+  width: 100% !important;
+  height: auto !important;
+  position: relative;
+  inset: auto;
+  object-fit: contain; /* keep full frame, no cropping */
+  border-radius: 12px;
+  background: transparent;
+}
+
+/* Isaura in videos: keep original 16:9 sizing */
+#videos .video-embed {
+  aspect-ratio: 16 / 9;
+  padding-bottom: 56.25%;
+  overflow: hidden;
 }
 
 /* =============================================
