@@ -419,7 +419,12 @@ strong { font-weight: 600; color: var(--purple); }
 
 /* Reduce gap when Shorts is placed right after the Hero */
 #hero + #shorts {
-  padding: 48px 0;
+  padding: 8px 0;
+}
+
+/* Reduce gap after the Shorts video section (next is Credibility) */
+#shorts + #credibility {
+  padding-top: 48px;
 }
 
 .section-label {
@@ -607,7 +612,11 @@ strong { font-weight: 600; color: var(--purple); }
 
   /* Shorts: mobile-only sizing + tighter spacing */
   #shorts {
-    padding: 24px 0;
+    padding: 6px 0;
+  }
+
+  #shorts + #credibility {
+    padding-top: 24px;
   }
 
   #shorts .video-grid-about {
@@ -1098,7 +1107,7 @@ strong { font-weight: 600; color: var(--purple); }
   /* Let the <video> define height based on its real aspect ratio */
   aspect-ratio: auto;
   padding-bottom: 0;
-  overflow: visible; /* avoid clipping letterboxing (we use contain) */
+  overflow: hidden; /* keep rounded corners clean */
 }
 
 #shorts .video-embed .shorts-video {
@@ -1107,6 +1116,7 @@ strong { font-weight: 600; color: var(--purple); }
   position: relative;
   inset: auto;
   object-fit: contain; /* keep full frame, no cropping */
+  display: block;
   border-radius: 12px;
   background: transparent;
 }
