@@ -417,6 +417,11 @@ strong { font-weight: 600; color: var(--purple); }
   padding: 40px 0;
 }
 
+/* Reduce gap when Shorts is placed right after the Hero */
+#hero + #shorts {
+  padding: 48px 0;
+}
+
 .section-label {
   font-size: 11px;
   font-weight: 600;
@@ -602,14 +607,6 @@ strong { font-weight: 600; color: var(--purple); }
 
   /* Shorts: mobile-only sizing + tighter spacing */
   #shorts {
-    padding: 48px 0;
-  }
-
-  #stats + #shorts {
-    padding: 24px 0;
-  }
-
-  #shorts + #photos {
     padding: 24px 0;
   }
 
