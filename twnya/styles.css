@@ -1109,10 +1109,78 @@ strong { font-weight: 600; color: var(--purple); }
   text-align: left;
 }
 
+#meet-jonny-abby .meet-jonny-profile {
+  margin: 20px auto 24px;
+  max-width: min(560px, 100%);
+}
+
+#meet-jonny-abby .meet-jonny-profile a {
+  display: block;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 16px 48px rgba(15, 12, 41, 0.14);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#meet-jonny-abby .meet-jonny-profile a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 56px rgba(15, 12, 41, 0.18);
+}
+
+#meet-jonny-abby .meet-jonny-profile img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+#meet-jonny-abby .meet-jonny-profile-caption {
+  margin-top: 12px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
 #meet-jonny-abby .meet-jonny-quote-credit {
   margin-top: 14px;
   color: var(--purple);
   font-weight: 600;
+  text-align: left;
+}
+
+/* Multi-client testimonials (worked closely / more experiences) */
+.section-testimonials .testimonial-card {
+  margin: 0 0 24px;
+  padding: 28px 24px;
+  background: var(--gold-surface);
+  border-left: 3px solid var(--purple);
+  border-radius: 0 12px 12px 0;
+  text-align: left;
+}
+
+.section-testimonials .testimonial-card:last-child {
+  margin-bottom: 0;
+}
+
+.section-testimonials .testimonial-body p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  letter-spacing: 0.005em;
+}
+
+.section-testimonials .testimonial-body p:last-child {
+  margin-bottom: 0;
+}
+
+.section-testimonials .testimonial-credit {
+  margin-top: 18px;
+  margin-bottom: 0;
+  color: var(--purple);
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.45;
   text-align: left;
 }
 
