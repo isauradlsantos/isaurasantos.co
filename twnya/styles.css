@@ -942,7 +942,7 @@ strong { font-weight: 600; color: var(--purple); }
 .investment-includes-mini {
   max-width: 620px;
   margin: 0 auto 20px;
-  text-align: left;
+  text-align: center;
 }
 
 .investment-includes-label {
@@ -955,19 +955,28 @@ strong { font-weight: 600; color: var(--purple); }
 }
 
 #investment .check-list-mini {
-  margin: 0;
+  max-width: 620px;
+  margin: 0 auto;
+  padding-left: 0;
+  text-align: left;
 }
 
 #investment .check-list-mini li {
   padding: 8px 0 8px 26px;
   font-size: 14px;
   line-height: 1.5;
+  text-align: left;
+  border-bottom: none;
+}
+
+#investment .check-list-mini li + li {
+  margin-top: 2px;
 }
 
 #investment .check-list-mini li::before {
   width: 14px;
   height: 14px;
-  top: 10px;
+  top: 9px;
   border-radius: 4px;
 }
 
