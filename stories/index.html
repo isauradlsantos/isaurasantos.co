@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="description" content="A project collecting the stories of people whose lives were forever changed by illness." />
+  <meta name="theme-color" content="#000000" />
+  <title>Stories — Isaura Santos</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/favicon.svg">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #000000;
+      color: #ffffff;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+      min-height: 100vh;
+      padding: 40px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    a:hover {
+      opacity: 0.7;
+    }
+
+    .page {
+      max-width: 1320px;
+    }
+
+    .back {
+      display: inline-block;
+      font-size: 20px;
+      letter-spacing: -0.02em;
+      margin-bottom: 48px;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .author {
+      position: sticky;
+      top: 40px;
+    }
+
+    .portrait {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-bottom: 24px;
+    }
+
+    .author-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .social-links {
+      display: inline-flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .social-icon {
+      width: 24px;
+      height: 24px;
+      stroke: #ffffff;
+      fill: none;
+      stroke-width: 1.5;
+      display: block;
+    }
+
+    .note {
+      column-count: 2;
+      column-gap: 56px;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.5;
+      letter-spacing: -0.02em;
+    }
+
+    .note h1,
+    .note h2 {
+      break-inside: avoid;
+      column-span: all;
+    }
+
+    .note h1 {
+      font-size: 48px;
+      font-weight: 400;
+      line-height: 1.4;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.4em;
+    }
+
+    .note h2 {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.5;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.2em;
+    }
+
+    .note p,
+    .note ul {
+      margin-bottom: 1.2em;
+      break-inside: avoid;
+    }
+
+    .note p:last-child,
+    .note ul:last-child {
+      margin-bottom: 0;
+    }
+
+    .note ul {
+      padding-left: 1.2em;
+    }
+
+    .note li {
+      margin-bottom: 0.6em;
+    }
+
+    .note li:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 1024px) {
+      .layout {
+        grid-template-columns: 200px 1fr;
+        gap: 48px;
+      }
+
+      .note {
+        column-gap: 40px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 24px;
+      }
+
+      .layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .author {
+        position: static;
+        display: grid;
+        grid-template-columns: 96px 1fr;
+        gap: 20px;
+        align-items: center;
+      }
+
+      .portrait {
+        margin-bottom: 0;
+      }
+
+      .author-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      .note h1 {
+        font-size: 36px;
+      }
+
+      .note {
+        column-count: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <a href="/" class="back">&larr; home</a>
+
+    <div class="layout">
+      <aside class="author">
+        <img
+          src="/stories/assets/portrait.png"
+          alt="Isaura Santos"
+          class="portrait"
+          width="240"
+          height="240"
+        >
+        <div class="author-meta">
+          <p>Isaura Santos</p>
+          <div class="social-links">
+            <a href="https://www.instagram.com/isauramusic/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="1.5"/>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/isaurasantos/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </aside>
+
+      <article class="note">
+        <h1>There's no "but now you're fine."</h1>
+
+        <h2>A project collecting the stories of people whose lives were forever changed by a diagnosis.</h2>
+
+        <p>I was diagnosed with breast cancer at 30, in January 2020. Six years later, I can promise you I'm a different person — more afraid of new things, more sensitive around exams and follow-ups. The health anxiety is real, and it's hard.</p>
+
+        <p>I want to tell my story. About how going back to your life isn't simple. How there's no "but now you're fine" — not ever again. I thought other people might relate, and music didn't feel like the right medium for this.</p>
+
+        <p>But as I started writing it down, I realized this story is much bigger than me. Unfortunately.</p>
+
+        <p>The world is optimized for getting things done. And I'm incredibly grateful for all the care I received when I needed it. But I think we can keep evolving — the conversation needs to be bigger, and it can be.</p>
+
+        <p>How can we be gentle with people whose lives have been forever changed by illness?</p>
+
+        <p>What does it mean to wait days, even weeks, for a call from the hospital to schedule a follow-up — when you're someone who's unlearned how to make simple plans?</p>
+
+        <p>What does it mean to still have questions, to be scared of going through treatment again? It doesn't help when people say, "you could get cancer again, just like I could."</p>
+
+        <p>People who've had a stroke are changed forever. People who received a transplant and are suddenly expected to feel perfect, to be thriving — after years of rebuilding who they are around their illness — might not be thriving at all.</p>
+
+        <p>Anyway — I believe the best way to capture these stories is through conversation.</p>
+
+        <p>Who I'm looking for</p>
+
+        <p>Anyone whose life was split into a before and an after by illness — and who's still living in the after. You don't need a diagnosis that people recognize, and you don't need to have made peace with it. I'm looking for the honest version, not the inspirational one.</p>
+
+        <p>Maybe that's you if:</p>
+
+        <ul>
+          <li>You had cancer and everyone treats you as "cured," but every scan still empties your stomach.</li>
+          <li>You survived a stroke and are quietly relearning parts of who you were.</li>
+          <li>You received a transplant or major surgery and feel guilty that you're not as grateful-and-thriving as people expect.</li>
+          <li>You live with a chronic or autoimmune condition that reshaped your plans, your work, your sense of the future.</li>
+          <li>You went through intensive treatment — ICU, long hospital stays — and came out changed in ways that are hard to explain.</li>
+          <li>You're the person beside someone who went through this, and it changed you too.</li>
+        </ul>
+
+        <p>If you're reading this and thinking "my story isn't big enough" — that's exactly the kind of story I want to hear.</p>
+
+        <p>Share your story</p>
+
+        <p>You don't need to tell the whole thing. Even a few lines is enough to start:</p>
+
+        <ul>
+          <li>What happened, and when</li>
+          <li>What changed for you afterward — the part people don't usually ask about</li>
+          <li>Whether you'd be open to a conversation</li>
+        </ul>
+
+        <p>Write as much or as little as feels right. There's no wrong way to do this.</p>
+
+        <p>Our conversations are private. Nothing you share gets used anywhere without your say — I'll only ever share what you feel okay with.</p>
+
+        <p>Send your story to <a href="mailto:isauramusic@gmail.com">isauramusic@gmail.com</a>. I read everything, and I'll reach out after the summer to talk. In Portuguese or English.</p>
+
+        <p>July 9, 2026</p>
+      </article>
+    </div>
+  </main>
+</body>
+</html>
