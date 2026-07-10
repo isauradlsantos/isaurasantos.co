@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-  <meta name="description" content="A project collecting the stories of people whose lives were forever changed by illness." />
+  <meta name="description" content="A project collecting the stories of people whose lives were forever changed by a diagnosis." id="meta-description" />
   <meta name="theme-color" content="#000000" />
   <title>Stories — Isaura Santos</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -35,41 +35,80 @@
 
     .page {
       max-width: 1320px;
+      margin: 0 auto;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 48px;
     }
 
     .back {
       display: inline-block;
       font-size: 20px;
       letter-spacing: -0.02em;
-      margin-bottom: 48px;
     }
 
-    .layout {
+    .lang-toggle {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .lang-btn {
+      background: none;
+      border: none;
+      color: #ffffff;
+      font-family: inherit;
+      font-size: 20px;
+      letter-spacing: -0.02em;
+      cursor: pointer;
+      padding: 0;
+      opacity: 0.45;
+      transition: opacity 0.2s;
+    }
+
+    .lang-btn:hover,
+    .lang-btn.active {
+      opacity: 1;
+    }
+
+    .header h1 {
+      font-size: 48px;
+      font-weight: 400;
+      line-height: 1.4;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.4em;
+    }
+
+    .header h2 {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.5;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.2em;
+    }
+
+    .intro {
       display: grid;
-      grid-template-columns: 240px 1fr;
-      gap: 64px;
-      align-items: start;
+      grid-template-columns: 220px 1fr;
+      gap: 0 72px;
+      margin-bottom: 56px;
     }
 
-    .author {
-      position: sticky;
-      top: 40px;
-    }
-
-    .portrait {
-      display: block;
-      width: 100%;
-      height: auto;
-      margin-bottom: 24px;
+    .photo-block {
+      width: 220px;
     }
 
     .author-meta {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 16px;
+      gap: 20px;
       font-size: 20px;
       letter-spacing: -0.02em;
+      margin-top: 32px;
     }
 
     .social-links {
@@ -87,68 +126,70 @@
       display: block;
     }
 
-    .note {
+    .portrait {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .story {
+      font-size: 15px;
+      line-height: 1.55;
+      letter-spacing: -0.01em;
       column-count: 2;
-      column-gap: 56px;
-      font-size: 20px;
-      font-weight: 400;
-      line-height: 1.5;
-      letter-spacing: -0.02em;
+      column-gap: 40px;
     }
 
-    .note h1,
-    .note h2 {
+    .story p {
+      margin-bottom: 1.1em;
       break-inside: avoid;
-      column-span: all;
     }
 
-    .note h1 {
-      font-size: 48px;
-      font-weight: 400;
-      line-height: 1.4;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.4em;
+    .story p:last-child {
+      margin-bottom: 0;
     }
 
-    .note h2 {
-      font-size: 20px;
-      font-weight: 400;
-      line-height: 1.5;
-      letter-spacing: -0.02em;
-      margin-bottom: 1.2em;
+    .instructions {
+      font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+      font-size: 13px;
+      line-height: 1.6;
+      letter-spacing: 0;
+      column-count: 2;
+      column-gap: 48px;
     }
 
-    .note p,
-    .note ul {
+    .instructions p {
       margin-bottom: 1.2em;
       break-inside: avoid;
     }
 
-    .note p:last-child,
-    .note ul:last-child {
+    .instructions p:last-child {
       margin-bottom: 0;
     }
 
-    .note ul {
-      padding-left: 1.2em;
+    .instructions .section-title {
+      margin-top: 0.4em;
     }
 
-    .note li {
-      margin-bottom: 0.6em;
+    .instructions .section-title:not(:first-child) {
+      margin-top: 1.6em;
     }
 
-    .note li:last-child {
-      margin-bottom: 0;
+    .instructions a.email-highlight {
+      color: #ffffff;
+      text-decoration: none;
+      box-shadow: inset 0 -0.32em 0 rgba(255, 220, 0, 0.45);
+      transition: box-shadow 0.2s;
+    }
+
+    .instructions a.email-highlight:hover {
+      opacity: 1;
+      box-shadow: inset 0 -0.32em 0 rgba(255, 220, 0, 0.7);
     }
 
     @media (max-width: 1024px) {
-      .layout {
-        grid-template-columns: 200px 1fr;
-        gap: 48px;
-      }
-
-      .note {
-        column-gap: 40px;
+      .instructions {
+        column-gap: 32px;
       }
     }
 
@@ -157,51 +198,61 @@
         padding: 24px;
       }
 
-      .layout {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-
-      .author {
-        position: static;
-        display: grid;
-        grid-template-columns: 96px 1fr;
-        gap: 20px;
-        align-items: center;
-      }
-
-      .portrait {
-        margin-bottom: 0;
-      }
-
-      .author-meta {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
-      }
-
-      .note h1 {
+      .header h1 {
         font-size: 36px;
       }
 
-      .note {
+      .intro {
+        grid-template-columns: 1fr;
+        gap: 32px 0;
+      }
+
+      .photo-block {
+        width: auto;
+      }
+
+      .portrait {
+        max-width: 160px;
+      }
+
+      .author-meta {
+        margin-top: 24px;
+      }
+
+      .story,
+      .instructions {
         column-count: 1;
+      }
+
+      .lang-btn {
+        font-size: 18px;
       }
     }
   </style>
 </head>
 <body>
   <main class="page">
-    <a href="/" class="back">&larr; home</a>
+    <div class="top-bar">
+      <a href="/" class="back">&larr; home</a>
+      <div class="lang-toggle">
+        <button type="button" class="lang-btn active" data-lang="en" id="lang-en">english</button>
+        <button type="button" class="lang-btn" data-lang="pt" id="lang-pt">português</button>
+      </div>
+    </div>
 
-    <div class="layout">
-      <aside class="author">
+    <header class="header">
+      <h1 id="copy-h1"></h1>
+      <h2 id="copy-h2"></h2>
+    </header>
+
+    <section class="intro">
+      <div class="photo-block">
         <img
           src="/stories/assets/portrait.png"
           alt="Isaura Santos"
           class="portrait"
-          width="240"
-          height="240"
+          width="220"
+          height="220"
         >
         <div class="author-meta">
           <p>Isaura Santos</p>
@@ -221,67 +272,109 @@
             </a>
           </div>
         </div>
-      </aside>
+      </div>
+      <div class="story" id="copy-story"></div>
+    </section>
 
-      <article class="note">
-        <h1>There's no "but now you're fine."</h1>
-
-        <h2>A project collecting the stories of people whose lives were forever changed by a diagnosis.</h2>
-
-        <p>I was diagnosed with breast cancer at 30, in January 2020. Six years later, I can promise you I'm a different person — more afraid of new things, more sensitive around exams and follow-ups. The health anxiety is real, and it's hard.</p>
-
-        <p>I want to tell my story. About how going back to your life isn't simple. How there's no "but now you're fine" — not ever again. I thought other people might relate, and music didn't feel like the right medium for this.</p>
-
-        <p>But as I started writing it down, I realized this story is much bigger than me. Unfortunately.</p>
-
-        <p>The world is optimized for getting things done. And I'm incredibly grateful for all the care I received when I needed it. But I think we can keep evolving — the conversation needs to be bigger, and it can be.</p>
-
-        <p>How can we be gentle with people whose lives have been forever changed by illness?</p>
-
-        <p>What does it mean to wait days, even weeks, for a call from the hospital to schedule a follow-up — when you're someone who's unlearned how to make simple plans?</p>
-
-        <p>What does it mean to still have questions, to be scared of going through treatment again? It doesn't help when people say, "you could get cancer again, just like I could."</p>
-
-        <p>People who've had a stroke are changed forever. People who received a transplant and are suddenly expected to feel perfect, to be thriving — after years of rebuilding who they are around their illness — might not be thriving at all.</p>
-
-        <p>Anyway — I believe the best way to capture these stories is through conversation.</p>
-
-        <p>Who I'm looking for</p>
-
-        <p>Anyone whose life was split into a before and an after by illness — and who's still living in the after. You don't need a diagnosis that people recognize, and you don't need to have made peace with it. I'm looking for the honest version, not the inspirational one.</p>
-
-        <p>Maybe that's you if:</p>
-
-        <ul>
-          <li>You had cancer and everyone treats you as "cured," but every scan still empties your stomach.</li>
-          <li>You survived a stroke and are quietly relearning parts of who you were.</li>
-          <li>You received a transplant or major surgery and feel guilty that you're not as grateful-and-thriving as people expect.</li>
-          <li>You live with a chronic or autoimmune condition that reshaped your plans, your work, your sense of the future.</li>
-          <li>You went through intensive treatment — ICU, long hospital stays — and came out changed in ways that are hard to explain.</li>
-          <li>You're the person beside someone who went through this, and it changed you too.</li>
-        </ul>
-
-        <p>If you're reading this and thinking "my story isn't big enough" — that's exactly the kind of story I want to hear.</p>
-
-        <p>Share your story</p>
-
-        <p>You don't need to tell the whole thing. Even a few lines is enough to start:</p>
-
-        <ul>
-          <li>What happened, and when</li>
-          <li>What changed for you afterward — the part people don't usually ask about</li>
-          <li>Whether you'd be open to a conversation</li>
-        </ul>
-
-        <p>Write as much or as little as feels right. There's no wrong way to do this.</p>
-
-        <p>Our conversations are private. Nothing you share gets used anywhere without your say — I'll only ever share what you feel okay with.</p>
-
-        <p>Send your story to <a href="mailto:isauramusic@gmail.com">isauramusic@gmail.com</a>. I read everything, and I'll reach out after the summer to talk. In Portuguese or English.</p>
-
-        <p>July 9, 2026</p>
-      </article>
-    </div>
+    <section class="instructions" id="copy-instructions"></section>
   </main>
+  <script>
+    var copy = {
+      en: {
+        description: 'A project collecting the stories of people whose lives were forever changed by a diagnosis.',
+        h1: 'There\'s no "but now you\'re fine."',
+        h2: 'A project collecting the stories of people whose lives were forever changed by a diagnosis.',
+        story: [
+          'I was diagnosed with breast cancer at 30, in January 2020. Today, roughly six years later, something I can tell you is that I am a very different person. I\'ve become new things, some of them incredibly beautiful and ones I\'m proud of, but I also carry overwhelming health anxiety — I\'m afraid, petrified of things that used to be trivial, which is really taxing. A follow-up exam is now emotionally draining. Minor symptoms set off an entire cascade of "what ifs," as if I\'ve lost trust in my own body, and I\'m always vigilant, overanalyzing every tingle. Very few things can truly shield me from this — and it\'s not for lack of positivity, information, or even faith. It\'s the consequence of traumatic life experiences, the aftertaste of life-and-death situations that resurfaces as I dare to go back to living in what used to be my normal.',
+          'This is a very rudimentary summary of the multitude of new challenges I was left with, but the key point is this: I now know that nobody — patient, physician, or system — truly knows how to deal with, overcome, or ease these challenges. Even more important, I finally understood that this isn\'t specific to me, and I\'m not the only one feeling it. It seems that when people face certain diagnoses — chronic and autoimmune diseases, strokes, transplants, genetic therapy, intensive treatments, and of course cancer — these challenges appear. The timeline in which they develop isn\'t clear, and I\'m not a psychologist, but I can give you my own example and tell you that at the six-year post-diagnosis mark, I\'m struggling the most.',
+          'You see, when you\'re doing treatments and going to your appointments, it can feel like a structure — doctors, nurses, the hospital — is taking care of you, and you decide to trust the process. Then comes the moment of having to "graduate" and trust that you\'ll be fine. But when you go back to your life, you no longer fit; you\'re different now, and you have a new normal to figure out.',
+          'Look, I\'m incredibly, immeasurably grateful for all the care I received when I needed it. The world is optimized for getting things done, for getting people out of the acute, threatening phase of their illnesses — but the challenges don\'t end there. Quality of life isn\'t just about dying or surviving; it\'s about enjoying each day. And on this point, the conversation needs to be bigger, and much louder.',
+          'Whenever I\'m going through something meaningful, I turn to art. Music has been my medium to express the joy of living, but also the doubts, concerns, uncertainties, and desperations. But this challenge got so big that I felt unable to make music from it. Eventually I understood it was simply that I might need a different form of expression — and the idea of writing my story started taking form. But this is so much bigger and more important than an n of 1. This is the reality of too many, and I should try to tell as many stories as possible.',
+          'What can we learn from each other? What does this all mean to other people? What does it mean to be more gentle with people whose lives have been forever changed by illness? And how would those findings impact the processes we don\'t question — such as waiting for days, even weeks, for a call from the hospital to schedule a follow-up, when you\'re someone who\'s unlearned how to make simple plans? What is this waiting doing to us emotionally, and what is the impact of this nerve-wracking ritual on our clinical outcomes? Could we help the people in charge better understand our side of the story?',
+          'I\'m not really sure what the final form of all this will be, but I\'ve decided to have conversations with people facing similar challenges, collect what they share, and tell our collective story. Because I want to believe we can build a world that is a bit more caring for anyone, in any season of life.',
+          'Please consider sending me an email if you think I should hear your story. And consider sharing this with your friends and on social media so it reaches more people. News soon!'
+        ],
+        instructions: [
+          { type: 'title', text: 'Who I\'m looking for' },
+          { type: 'p', text: 'Anyone whose life split into a before and an after because of illness — and who\'s still living in the after. You don\'t need a diagnosis people recognize, and you don\'t need to have made peace with it. Cancer, stroke, transplant, chronic or autoimmune conditions, intensive treatment — or you were the person beside someone going through it.' },
+          { type: 'p', text: 'I want the honest version, not the inspirational one. And if you\'re thinking "my story isn\'t big enough" — that\'s exactly the story I want to hear.' },
+          { type: 'title', text: 'Share your story' },
+          { type: 'email', before: 'Email me at ', after: '. A few lines is enough to start — what happened, what changed afterward, and whether you\'d be open to a conversation. Write as much or as little as feels right; there\'s no wrong way to do this.' },
+          { type: 'p', text: 'Our conversations are private. I\'ll only ever share what you feel okay with. I read everything, and I\'ll reach out after the summer, in Portuguese or English.' }
+        ]
+      },
+      pt: {
+        description: 'Um projeto que reúne histórias de pessoas cuja vida mudou para sempre por causa de um diagnóstico.',
+        h1: 'Não há nenhum "mas agora já estás bem."',
+        h2: 'Um projeto que reúne histórias de pessoas cuja vida mudou para sempre por causa de um diagnóstico.',
+        story: [
+          'Fui diagnosticada com cancro da mama aos 30 anos, em janeiro de 2020. Hoje, quase seis anos depois, o que posso dizer é que sou uma pessoa muito diferente. Sou coisas novas, algumas incrivelmente bonitas e de que me orgulho, mas é também verdade que vivo com uma ansiedade enorme em relação à saúde. Tenho medo, entro em pânico com coisas que antes nem me passavam pela cabeça, e isso desgasta-me. Um exame de rotina passou a ser um peso enorme. Um sintoma pequeno chega para desencadear uma série de "e se…", como se já não confiasse no meu próprio corpo, e ando sempre em alerta, a analisar cada formigueiro. Há muito pouco que me consiga proteger disto — e não é por falta de positividade, de informação ou de fé. É o que fica de experiências traumáticas, o rasto que as situações de vida ou morte deixam e que volta a aparecer quando tento retomar aquilo que era a minha vida normal.',
+          'Isto é só um resumo à pressa dos muitos desafios com que fiquei, mas o essencial é isto: percebi que ninguém — nem os pacientes, nem os médicos, nem o sistema — sabe bem como lidar com isto, ultrapassá-lo ou sequer torná-lo um pouco mais fácil. E, mais importante ainda, percebi que não é só comigo. Não sou a única a sentir isto. Ao que parece, há uma série de diagnósticos — doenças crónicas e autoimunes, AVCs, transplantes, terapia genética, tratamentos intensivos e, claro, o cancro — em que estes desafios aparecem. Não há um tempo certo para eles saírem da toca, e não sou psicóloga, mas posso falar por mim: é agora, quase seis anos depois do diagnóstico, que estou a ter mais dificuldades.',
+          'Talvez não saibam mas enquanto se anda em tratamentos e consultas, sentes que há uma estrutura à tua volta — médicos, enfermeiros, o hospital — a tomar conta de ti, e deixas-te confiar no processo. Depois chega a altura de teres luz verde para ir viver e tens de acreditar que vais ficar bem. Mas quando voltas à tua vida, já não encaixas da mesma maneira. És outra pessoa, e tens uma vida nova para aprender a viver.',
+          'E que fique claro: sou imensamente grata por todo o apoio que tive quando precisei. O mundo está programado para ser eficiente, para tirar as pessoas da fase mais aguda e perigosa da doença — mas os desafios não acabam aí. Ter qualidade de vida não é só sobreviver ou não morrer; é conseguir aproveitar cada dia. E é aqui que a conversa tem de crescer, e de se fazer ouvir muito mais.',
+          'Sempre que passo por algo importante, volto-me para a arte. A música tem sido a minha forma de exprimir a alegria de viver, mas também as dúvidas, os medos, as incertezas e os desesperos. Só que isto ficou tão grande que me tenho sentido incapaz de fazer música a partir daqui. Acabei por perceber que se calhar precisava de outra forma de me exprimir — e foi assim que a ideia de escrever a minha história começou a nascer. Mas isto é muito maior e mais importante do que a minha história. É a realidade de tanta gente, e sinto que devo tentar contar o máximo de histórias possível.',
+          'O que podemos aprender uns com os outros? O que é que tudo isto significa para outras pessoas? O que é ser mais gentil com quem teve a vida mudada para sempre depois de um diagnóstico? E de que forma é que isso mudaria coisas que nunca questionamos — como esperar dias, às vezes semanas, por uma chamada do hospital para marcar um exame, quando deixámos de saber fazer planos simples? O que é que essa espera nos faz por dentro? Que impacto tem esse ritual angustiante nos nossos resultados? Será que conseguimos ajudar quem decide a perceber melhor o nosso lado?',
+          'Ainda não sei bem em que é que isto vai dar, mas decidi conversar com pessoas que estão a passar por desafios parecidos, juntar o que me contam e contar a nossa história coletiva. Porque quero acreditar que conseguimos construir um mundo um bocadinho mais atento a todos, em qualquer fase da vida.',
+          'Se achas que devo ouvir a tua história, escreve-me. E se puderes, partilha isto com os teus amigos e nas redes sociais, para chegar a mais pessoas. Em breve há novidades!'
+        ],
+        instructions: [
+          { type: 'title', text: 'Quem procuro' },
+          { type: 'p', text: 'Qualquer pessoa cuja vida ficou dividida entre um antes e um depois por causa de um diagnóstico — e que ainda está a viver esse depois. Não precisa de ser uma doença que toda a gente conheça, nem precisas de já ter feito as pazes com ela. Cancro, AVC, transplante, uma doença crónica ou autoimune, tratamentos difíceis — ou foste tu a acompanhar de perto quem passou por isto.' },
+          { type: 'p', text: 'Quero a versão honesta, não a bonita. E se estás a pensar "a minha história não tem assim tanto que se diga" — é mesmo essa que quero ouvir.' },
+          { type: 'title', text: 'Conta-me a tua história' },
+          { type: 'email', before: 'Escreve-me para ', after: '. Umas linhas chegam para começar — o que aconteceu, o que mudou depois, e se estarias disponível para conversarmos. Escreve o que te apetecer, muito ou pouco; não há maneira errada de fazer isto.' },
+          { type: 'p', text: 'Fica tudo entre nós. Só partilho aquilo com que te sentires à vontade. Leio tudo, e volto a falar contigo depois do verão, em português ou inglês.' }
+        ]
+      }
+    };
+
+    var email = 'isauramusic@gmail.com';
+
+    function renderStory(paragraphs) {
+      return paragraphs.map(function (text) {
+        return '<p>' + text + '</p>';
+      }).join('');
+    }
+
+    function renderInstructions(blocks) {
+      return blocks.map(function (block) {
+        if (block.type === 'title') {
+          return '<p class="section-title">' + block.text + '</p>';
+        }
+        if (block.type === 'email') {
+          return '<p>' + block.before + '<a href="mailto:' + email + '" class="email-highlight">' + email + '</a>' + block.after + '</p>';
+        }
+        return '<p>' + block.text + '</p>';
+      }).join('');
+    }
+
+    function updateLangButtons(lang) {
+      document.querySelectorAll('.lang-btn').forEach(function (btn) {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+    }
+
+    function setLanguage(lang) {
+      var content = copy[lang];
+      document.documentElement.lang = lang;
+      document.getElementById('meta-description').setAttribute('content', content.description);
+      document.getElementById('copy-h1').textContent = content.h1;
+      document.getElementById('copy-h2').textContent = content.h2;
+      document.getElementById('copy-story').innerHTML = renderStory(content.story);
+      document.getElementById('copy-instructions').innerHTML = renderInstructions(content.instructions);
+      localStorage.setItem('stories-lang', lang);
+      updateLangButtons(lang);
+    }
+
+    document.getElementById('lang-en').addEventListener('click', function () {
+      setLanguage('en');
+    });
+
+    document.getElementById('lang-pt').addEventListener('click', function () {
+      setLanguage('pt');
+    });
+
+    setLanguage(localStorage.getItem('stories-lang') || 'en');
+  </script>
 </body>
 </html>
