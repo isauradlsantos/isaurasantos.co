@@ -129,23 +129,4 @@
       }
     });
   });
-
-  // Cookies banner
-  const cookiesBanner = document.getElementById('cookies-banner');
-  const cookiesAccept = document.getElementById('cookies-accept');
-  const COOKIES_KEY = 'twnya_cookies_accepted_v1';
-
-  if (cookiesBanner && cookiesAccept) {
-    const hasConsent = window.localStorage.getItem(COOKIES_KEY) === 'true';
-    if (!hasConsent) {
-      requestAnimationFrame(() => {
-        cookiesBanner.classList.add('is-visible');
-      });
-    }
-
-    cookiesAccept.addEventListener('click', () => {
-      window.localStorage.setItem(COOKIES_KEY, 'true');
-      cookiesBanner.classList.remove('is-visible');
-    });
-  }
 })();
