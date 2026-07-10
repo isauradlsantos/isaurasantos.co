@@ -3,7 +3,6 @@
 
   var CONSENT_KEY = 'isaura-cookie-consent';
   var LEGACY_TWNYA_KEY = 'twnya_cookies_accepted_v1';
-  var GA_ID = 'G-M788KL9WG9';
   var META_PIXEL_ID = '1292622612797075';
 
   function isTwnyaPage() {
@@ -30,37 +29,6 @@
   function setConsent(value) {
     localStorage.setItem(CONSENT_KEY, value);
     localStorage.removeItem(LEGACY_TWNYA_KEY);
-  }
-
-  function initGoogleAnalytics() {
-    if (window.__gaInitialized) {
-      return;
-    }
-    window.__gaInitialized = true;
-
-    if (!window.gtag) {
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = function () {
-        window.dataLayer.push(arguments);
-      };
-      window.gtag('consent', 'default', {
-        analytics_storage: 'denied',
-        ad_storage: 'denied',
-        ad_user_data: 'denied',
-        ad_personalization: 'denied',
-        wait_for_update: 500
-      });
-    }
-
-    window.gtag('js', new Date());
-    window.gtag('config', GA_ID);
-
-    if (!document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) {
-      var script = document.createElement('script');
-      script.async = true;
-      script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
-      document.head.appendChild(script);
-    }
   }
 
   function updateGoogleConsent(granted) {
@@ -163,8 +131,6 @@
   }
 
   function init() {
-    initGoogleAnalytics();
-
     var consent = getConsent();
     if (consent === 'accepted' || consent === 'denied') {
       applyConsent(consent);
