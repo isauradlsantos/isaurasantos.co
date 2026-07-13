@@ -38,7 +38,10 @@
       color: #ffffff;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
       min-height: 100vh;
+      display: flex;
+      flex-direction: column;
       padding: 40px;
+      overflow-x: clip;
     }
 
     a {
@@ -51,88 +54,203 @@
       opacity: 0.7;
     }
 
-    .page {
-      max-width: 1320px;
-      margin: 0 auto;
-    }
-
-    .top-bar {
+    .content {
+      flex: 1;
       display: flex;
+      flex-direction: column;
       justify-content: space-between;
-      align-items: center;
-      margin-bottom: 48px;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
     }
 
-    .back {
-      display: inline-block;
-      font-size: 20px;
-      letter-spacing: -0.02em;
-    }
-
-    .lang-toggle {
+    .page-header {
       display: flex;
-      gap: 20px;
-      align-items: center;
+      justify-content: flex-end;
+      margin-bottom: 32px;
     }
 
-    .lang-btn {
-      background: none;
-      border: none;
-      color: #ffffff;
-      font-family: inherit;
-      font-size: 20px;
-      letter-spacing: -0.02em;
-      cursor: pointer;
-      padding: 0;
-      opacity: 0.45;
+    .page-header.is-hidden {
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .home-link {
+      display: inline-block;
+      line-height: 0;
+    }
+
+    .site-link {
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      line-height: 24px;
+      text-transform: lowercase;
+      white-space: nowrap;
+    }
+
+    .portrait-thumb {
+      width: 112px;
+      height: 112px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
       transition: opacity 0.2s;
     }
 
-    .lang-btn:hover,
-    .lang-btn.active {
+    .home-link:hover .portrait-thumb {
+      opacity: 0.7;
+    }
+
+    .page-body {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: clamp(48px, 8vw, 96px);
+      width: 100%;
+      max-width: 100%;
+      margin-top: -1cm;
+    }
+
+    .main-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      flex: 0 0 auto;
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    .main-text h1 {
+      font-size: clamp(28px, 3.6vw, 48px);
+      font-weight: 400;
+      line-height: 1.4;
+      margin: 0;
+      letter-spacing: -0.02em;
+      text-align: left;
+    }
+
+    .main-text button {
+      background: none;
+      border: none;
+      color: inherit;
+      font: inherit;
+      letter-spacing: inherit;
+      text-align: left;
+      cursor: pointer;
+      padding: 0;
+      transition: opacity 0.2s;
+      white-space: normal;
+      max-width: 100%;
+    }
+
+    .main-text button:hover {
+      opacity: 0.7;
+    }
+
+    .main-text.has-selection button:not(.is-active) {
+      opacity: 0.35;
+    }
+
+    .main-text.has-selection button.is-active {
       opacity: 1;
     }
 
-    .header h1 {
-      font-size: 48px;
-      font-weight: 400;
-      line-height: 1.4;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.4em;
+    .main-text.has-selection button:not(.is-active):hover {
+      opacity: 0.55;
     }
 
-    .header h2 {
+    .right-side {
+      flex: 0 0 auto;
+      width: min(580px, 100%);
+      max-width: 580px;
+      min-width: 0;
+    }
+
+    .content-panel {
+      display: none;
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 48px;
+      overflow-wrap: anywhere;
+    }
+
+    .content-panel.is-visible {
+      display: block;
+    }
+
+    .content-panel p {
       font-size: 20px;
       font-weight: 400;
       line-height: 1.5;
       letter-spacing: -0.02em;
       margin-bottom: 1.2em;
+      overflow-wrap: anywhere;
     }
 
-    .intro {
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 0 72px;
-      margin-bottom: 56px;
+    .content-panel p:last-child {
+      margin-bottom: 0;
     }
 
-    .photo-block {
-      width: 220px;
+    .action-box {
+      position: sticky;
+      top: 40px;
+      width: 100%;
+      max-width: 100%;
+      overflow-wrap: anywhere;
+      font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+      font-size: 12px;
+      line-height: 1.6;
+      letter-spacing: 0;
     }
 
-    .author-meta {
+    .action-box.is-hidden {
+      display: none;
+    }
+
+    .action-box h3 {
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0;
+      text-transform: lowercase;
+      margin-bottom: 1.2em;
+    }
+
+    .action-box p {
+      margin-bottom: 1.2em;
+    }
+
+    .action-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .action-box a.email-highlight {
+      color: #ffffff;
+      text-decoration: none;
+      box-shadow: inset 0 -0.32em 0 rgba(255, 220, 0, 0.45);
+      transition: box-shadow 0.2s;
+    }
+
+    .action-box a.email-highlight:hover {
+      opacity: 1;
+      box-shadow: inset 0 -0.32em 0 rgba(255, 220, 0, 0.7);
+    }
+
+    .footer-row {
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 20px;
-      font-size: 20px;
-      letter-spacing: -0.02em;
-      margin-top: 32px;
+      margin-top: 36px;
+      gap: 40px;
     }
 
-    .social-links {
+    .social-icons {
       display: inline-flex;
-      gap: 20px;
+      gap: 26px;
       align-items: center;
+      flex-wrap: wrap;
     }
 
     .social-icon {
@@ -141,73 +259,76 @@
       stroke: #ffffff;
       fill: none;
       stroke-width: 1.5;
-      display: block;
+      cursor: pointer;
+      transition: opacity 0.2s;
     }
 
-    .portrait {
-      display: block;
-      width: 100%;
-      height: auto;
+    .social-icon:hover {
+      opacity: 0.7;
     }
 
-    .story {
-      font-size: 15px;
-      line-height: 1.55;
-      letter-spacing: -0.01em;
-      column-count: 2;
-      column-gap: 40px;
+    .social-link {
+      display: inline-block;
+      text-decoration: none;
+      color: inherit;
     }
 
-    .story p {
-      margin-bottom: 1.1em;
-      break-inside: avoid;
-    }
-
-    .story p:last-child {
-      margin-bottom: 0;
-    }
-
-    .instructions {
-      font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
-      font-size: 13px;
-      line-height: 1.6;
-      letter-spacing: 0;
-      column-count: 2;
-      column-gap: 48px;
-    }
-
-    .instructions p {
-      margin-bottom: 1.2em;
-      break-inside: avoid;
-    }
-
-    .instructions p:last-child {
-      margin-bottom: 0;
-    }
-
-    .instructions .section-title {
-      margin-top: 0.4em;
-    }
-
-    .instructions .section-title:not(:first-child) {
-      margin-top: 1.6em;
-    }
-
-    .instructions a.email-highlight {
+    .book-call {
+      display: inline-block;
       color: #ffffff;
       text-decoration: none;
-      box-shadow: inset 0 -0.32em 0 rgba(255, 220, 0, 0.45);
-      transition: box-shadow 0.2s;
+      font-size: 20px;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      transition: opacity 0.2s;
+      cursor: pointer;
+      line-height: 24px;
     }
 
-    .instructions a.email-highlight:hover {
-      opacity: 1;
-      box-shadow: inset 0 -0.32em 0 rgba(255, 220, 0, 0.7);
+    .book-call:hover {
+      opacity: 0.7;
     }
 
-    @media (max-width: 1024px) {
-      .instructions {
-        column-gap: 32px;
+    .footer-right {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .legal-links {
+      display: flex;
+      gap: 24px;
+      justify-content: flex-end;
+      text-align: right;
+      font-size: 12px;
+      letter-spacing: -0.01em;
+      text-transform: lowercase;
+    }
+
+    .legal-links a {
+      color: #ffffff;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .legal-links a:hover {
+      opacity: 0.7;
+    }
+
+    @media (max-width: 900px) {
+      body {
+        padding: 28px;
+      }
+
+      .right-side {
+        flex: 1 1 100%;
+        width: 100%;
+        max-width: 580px;
+      }
+
+      .action-box {
+        position: static;
       }
     }
 
@@ -216,149 +337,167 @@
         padding: 24px;
       }
 
-      .header h1 {
+      .main-text h1 {
         font-size: 36px;
       }
 
-      .intro {
-        grid-template-columns: 1fr;
-        gap: 32px 0;
-      }
-
-      .photo-block {
-        width: auto;
-      }
-
-      .portrait {
-        max-width: 160px;
-      }
-
-      .author-meta {
-        margin-top: 24px;
-      }
-
-      .story,
-      .instructions {
-        column-count: 1;
-      }
-
-      .lang-btn {
+      .content-panel p {
         font-size: 18px;
+      }
+
+      .social-icons {
+        gap: 20px;
+      }
+
+      .social-icon {
+        width: 20px;
+        height: 20px;
+      }
+
+      .book-call {
+        font-size: 16px;
+        line-height: 20px;
+      }
+
+      .footer-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+      }
+
+      .footer-right {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .legal-links {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 12px;
+        text-align: left;
       }
     }
   </style>
 </head>
 <body>
-  <main class="page">
-    <div class="top-bar">
-      <a href="/" class="back">&larr; home</a>
-      <div class="lang-toggle">
-        <button type="button" class="lang-btn active" data-lang="en" id="lang-en">english</button>
-        <button type="button" class="lang-btn" data-lang="pt" id="lang-pt">português</button>
+  <div class="content">
+    <div class="page-header">
+      <a href="/" class="home-link" aria-label="home">
+        <img src="/stories/assets/portrait.png" alt="Isaura Santos" class="portrait-thumb" width="112" height="112">
+      </a>
+    </div>
+
+    <div class="page-body">
+      <nav class="main-text" id="section-nav" aria-label="Sections"></nav>
+      <div class="right-side">
+        <div class="content-panel" id="content-panel" aria-live="polite"></div>
+        <aside class="action-box" id="action-box" aria-label="Share your story"></aside>
       </div>
     </div>
 
-    <header class="header">
-      <h1 id="copy-h1"></h1>
-      <h2 id="copy-h2"></h2>
-    </header>
-
-    <section class="intro">
-      <div class="photo-block">
-        <img
-          src="/stories/assets/portrait.png"
-          alt="Isaura Santos"
-          class="portrait"
-          width="220"
-          height="220"
-        >
-        <div class="author-meta">
-          <p>Isaura Santos</p>
-          <div class="social-links">
-            <a href="https://www.instagram.com/isauramusic/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                <circle cx="12" cy="12" r="4"/>
-                <circle cx="17.5" cy="6.5" r="1.5"/>
-              </svg>
-            </a>
-            <a href="https://www.linkedin.com/in/isaurasantos/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
-                <circle cx="4" cy="4" r="2"/>
-              </svg>
-            </a>
-          </div>
+    <div class="footer-row">
+      <div class="social-icons">
+        <a href="mailto:isauramusic@gmail.com" class="social-link">
+          <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="5" width="18" height="14" rx="2" ry="2"/>
+            <path d="M3 7l9 6 9-6"/>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/isaurasantos/" target="_blank" rel="noopener noreferrer" class="social-link">
+          <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/isauramusic/" target="_blank" rel="noopener noreferrer" class="social-link">
+          <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="1.5"/>
+          </svg>
+        </a>
+        <a href="/" class="site-link">isaurasantos.co</a>
+      </div>
+      <div class="footer-right">
+        <div class="legal-links">
+          <a href="/privacy.html">privacy policy</a>
+          <a href="/cookie-policy.html">cookie policy</a>
+          <a href="/legal-notice.html">legal notice</a>
         </div>
       </div>
-      <div class="story" id="copy-story"></div>
-    </section>
-
-    <section class="instructions" id="copy-instructions"></section>
-  </main>
+    </div>
+  </div>
   <script>
+    var email = 'isauramusic@gmail.com';
+    var activeSectionId = null;
+
     var copy = {
-      en: {
-        description: 'A project collecting the stories of people whose lives were forever changed by a diagnosis.',
-        h1: 'There\'s no "but now you\'re fine."',
-        h2: 'A project collecting the stories of people whose lives were forever changed by a diagnosis.',
-        story: [
-          'I was diagnosed with breast cancer at 30, in January 2020. Today, roughly six years later, something I can tell you is that I am a very different person. I\'ve become new things, some of them incredibly beautiful and ones I\'m proud of, but I also carry overwhelming health anxiety — I\'m afraid, petrified of things that used to be trivial, which is really taxing. A follow-up exam is now emotionally draining. Minor symptoms set off an entire cascade of "what ifs," as if I\'ve lost trust in my own body, and I\'m always vigilant, overanalyzing every tingle. Very few things can truly shield me from this — and it\'s not for lack of positivity, information, or even faith. It\'s the consequence of traumatic life experiences, the aftertaste of life-and-death situations that resurfaces as I dare to go back to living in what used to be my normal.',
-          'This is a very rudimentary summary of the multitude of new challenges I was left with, but the key point is this: I now know that nobody — patient, physician, or system — truly knows how to deal with, overcome, or ease these challenges. Even more important, I finally understood that this isn\'t specific to me, and I\'m not the only one feeling it. It seems that when people face certain diagnoses — chronic and autoimmune diseases, strokes, transplants, genetic therapy, intensive treatments, and of course cancer — these challenges appear. The timeline in which they develop isn\'t clear, and I\'m not a psychologist, but I can give you my own example and tell you that at the six-year post-diagnosis mark, I\'m struggling the most.',
-          'You see, when you\'re doing treatments and going to your appointments, it can feel like a structure — doctors, nurses, the hospital — is taking care of you, and you decide to trust the process. Then comes the moment of having to "graduate" and trust that you\'ll be fine. But when you go back to your life, you no longer fit; you\'re different now, and you have a new normal to figure out.',
-          'Look, I\'m incredibly, immeasurably grateful for all the care I received and keep receiving. The world is optimized for getting things done, for getting people out of the acute, threatening phase of their illnesses — but the challenges don\'t end there. Quality of life isn\'t just about dying or surviving; it\'s about enjoying each day. And on this point, the conversation needs to be bigger, and much louder.',
-          'Whenever I\'m going through something meaningful, I turn to art. Music has been my medium to express the joy of living, but also the doubts, concerns, uncertainties, and desperations. But this challenge got so big that I felt unable to make music from it. Eventually I understood it was simply that I might need a different form of expression — and the idea of writing my story started taking form. But this is so much bigger and more important than an n of 1. This is the reality of too many, and I should try to tell as many stories as possible.',
-          'What can we learn from each other? What does this all mean to other people? What does it mean to be more gentle with people whose lives have been forever changed by illness? And how would those findings impact the processes we don\'t question — such as waiting for days, even weeks, for a call from the hospital to schedule a follow-up, when you\'re someone who\'s unlearned how to make simple plans? What is this waiting doing to us emotionally, and what is the impact of this nerve-wracking ritual on our clinical outcomes? Could we help the people in charge better understand our side of the story?',
-          'I\'m not really sure what the final form of all this will be, but I\'ve decided to have conversations with people facing similar challenges, collect what they share, and tell our collective story. Because I want to believe we can build a world that is a bit more caring for anyone, in any season of life.',
-          'Please consider sending me an email if you think I should hear your story. And consider sharing this with your friends and on social media so it reaches more people. News soon!'
+      description: 'A project collecting the stories of people whose lives were forever changed by a diagnosis.',
+      sections: [
+          {
+            id: 'my-story',
+            nav: 'my story after a diagnosis',
+            paragraphs: [
+              'I was diagnosed with breast cancer at 30, in January 2020. Today, roughly six years later, something I can tell you is that I am a very different person. I\'ve become new things, some of them incredibly beautiful and ones I\'m proud of, but I also carry overwhelming health anxiety — I\'m afraid, petrified of things that used to be trivial, which is really taxing. A follow-up exam is now emotionally draining. Minor symptoms set off an entire cascade of "what ifs," as if I\'ve lost trust in my own body, and I\'m always vigilant, overanalyzing every tingle. Very few things can truly shield me from this — and it\'s not for lack of positivity, information, or even faith. It\'s the consequence of traumatic life experiences, the aftertaste of life-and-death situations that resurfaces as I dare to go back to living in what used to be my normal.',
+              'You see, when you\'re doing treatments and going to your appointments, it can feel like a structure — doctors, nurses, the hospital — is taking care of you, and you decide to trust the process. Then comes the moment of having to "graduate" and trust that you\'ll be fine. But when you go back to your life, you no longer fit; you\'re different now, and you have a new normal to figure out.'
+            ]
+          },
+          {
+            id: 'not-just-me',
+            nav: 'it\'s not just me',
+            paragraphs: [
+              'This is a very rudimentary summary of the multitude of new challenges I was left with, but the key point is this: I now know that nobody — patient, physician, or system — truly knows how to deal with, overcome, or ease these challenges. Even more important, I finally understood that this isn\'t specific to me, and I\'m not the only one feeling it. It seems that when people face certain diagnoses — chronic and autoimmune diseases, strokes, transplants, genetic therapy, intensive treatments, and of course cancer — these challenges appear. The timeline in which they develop isn\'t clear, and I\'m not a psychologist, but I can give you my own example and tell you that at the six-year post-diagnosis mark, I\'m struggling the most.'
+            ]
+          },
+          {
+            id: 'what-needs-to-change',
+            nav: 'what needs to change',
+            paragraphs: [
+              'I\'m incredibly, immeasurably grateful for all the care I received and keep receiving. The world is optimized for getting things done, for getting people out of the acute, threatening phase of their illnesses — but the challenges don\'t end there. Quality of life isn\'t just about dying or surviving; it\'s about enjoying each day. And on this point, the conversation needs to be bigger, and much louder.',
+              'What can we learn from each other? What does this all mean to other people? What does it mean to be more gentle with people whose lives have been forever changed by illness? And how would those findings impact the processes we don\'t question — such as waiting for days, even weeks, for a call from the hospital to schedule a follow-up, when you\'re someone who\'s unlearned how to make simple plans? What is this waiting doing to us emotionally, and what is the impact of this nerve-wracking ritual on our clinical outcomes? Could we help the people in charge better understand our side of the story?'
+            ]
+          },
+          {
+            id: 'why-not-music',
+            nav: 'why not music for this',
+            paragraphs: [
+              'Whenever I\'m going through something meaningful, I turn to art. Music has been my medium to express the joy of living, but also the doubts, the concerns, the uncertainties, the desperations. But this challenge got so big that I felt unable to make music from it. Eventually I understood it was simply that I might need a different form of expression — and the idea of writing my story started taking form.',
+              'But this is so much bigger and more important than an n of 1. This is the reality of too many, and I should try to tell as many stories as possible.'
+            ]
+          },
+          {
+            id: 'tell-your-story',
+            nav: 'tell me your story',
+            paragraphs: [
+              'I\'m not really sure what the final form of all this will be, but I\'ve decided to have conversations with people facing similar challenges, collect what they share, and tell our collective story. Because I want to believe we can build a world that is a bit more caring for anyone, in any season of life.',
+              'So if your life split into a before and an after because of a diagnosis, and you\'re now living in the after, I\'d like to hear from you. Cancer, stroke, transplant, a chronic or autoimmune condition, intensive treatment. Or you were the person beside someone going through it.',
+              'You don\'t need a diagnosis people recognize, and you don\'t need to have made peace with it. I want the honest version, not the inspirational one. If you\'re thinking "my story isn\'t big enough," that\'s exactly the one I want to hear.',
+              'Write to me at isauramusic@gmail.com. A few lines is enough to start: what happened, what changed afterward, and whether you\'d be open to a conversation.',
+              'Everything stays between us. I only share what you\'re okay with. I read every email, and I\'ll reach out after the summer, in Portuguese or English.'
+            ]
+          }
         ],
-        instructions: [
-          { type: 'title', text: 'Who I\'m looking for' },
-          { type: 'p', text: 'Anyone whose life split into a before and an after because of illness — and who\'s still living in the after. You don\'t need a diagnosis people recognize, and you don\'t need to have made peace with it. Cancer, stroke, transplant, chronic or autoimmune conditions, intensive treatment — or you were the person beside someone going through it.' },
-          { type: 'p', text: 'I want the honest version, not the inspirational one. And if you\'re thinking "my story isn\'t big enough" — that\'s exactly the story I want to hear.' },
-          { type: 'title', text: 'Share your story' },
-          { type: 'email', before: 'Email me at ', after: '. A few lines is enough to start — what happened, what changed afterward, and whether you\'d be open to a conversation. Write as much or as little as feels right; there\'s no wrong way to do this.' },
-          { type: 'p', text: 'Our conversations are private. I\'ll only ever share what you feel okay with. I read everything, and I\'ll reach out after the summer, in Portuguese or English.' }
-        ]
-      },
-      pt: {
-        description: 'Um projeto que reúne histórias de pessoas cuja vida mudou para sempre por causa de um diagnóstico.',
-        h1: 'Não há nenhum "mas agora já estás bem."',
-        h2: 'Um projeto que reúne histórias de pessoas cuja vida mudou para sempre por causa de um diagnóstico.',
-        story: [
-          'Fui diagnosticada com cancro da mama aos 30 anos, em janeiro de 2020. Hoje, quase seis anos depois, o que posso dizer é que sou uma pessoa muito diferente. Sou coisas novas, algumas incrivelmente bonitas e de que me orgulho, mas é também verdade que vivo com uma ansiedade enorme em relação à saúde. Tenho medo, entro em pânico com coisas que antes nem me passavam pela cabeça, e isso desgasta-me. Um exame de rotina passou a ser um peso enorme. Um sintoma pequeno chega para desencadear uma série de "e se…", como se já não confiasse no meu próprio corpo, e ando sempre em alerta, a analisar cada formigueiro. Há muito pouco que me consiga proteger disto — e não é por falta de positividade, de informação ou de fé. É o que fica de experiências traumáticas, o rasto que as situações de vida ou morte deixam e que volta a aparecer quando tento retomar aquilo que era a minha vida normal.',
-          'Isto é só um resumo à pressa dos muitos desafios com que fiquei, mas o essencial é isto: percebi que ninguém — nem os pacientes, nem os médicos, nem o sistema — sabe bem como lidar com isto, ultrapassá-lo ou sequer torná-lo um pouco mais fácil. E, mais importante ainda, percebi que não é só comigo. Não sou a única a sentir isto. Ao que parece, há uma série de diagnósticos — doenças crónicas e autoimunes, AVCs, transplantes, terapia genética, tratamentos intensivos e, claro, o cancro — em que estes desafios aparecem. Não há um tempo certo para eles saírem da toca, e não sou psicóloga, mas posso falar por mim: é agora, quase seis anos depois do diagnóstico, que estou a ter mais dificuldades.',
-          'Talvez não saibam mas enquanto se anda em tratamentos e consultas, sentes que há uma estrutura à tua volta — médicos, enfermeiros, o hospital — a tomar conta de ti, e deixas-te confiar no processo. Depois chega a altura de teres luz verde para ir viver e tens de acreditar que vais ficar bem. Mas quando voltas à tua vida, já não encaixas da mesma maneira. És outra pessoa, e tens uma vida nova para aprender a viver.',
-          'E que fique claro: sou imensamente grata por todo o apoio que tive, e que continuo a ter. O mundo está programado para ser eficiente, para tirar as pessoas da fase mais aguda e perigosa da doença — mas os desafios não acabam aí. Ter qualidade de vida não é só sobreviver ou não morrer; é conseguir aproveitar cada dia. E é aqui que a conversa tem de crescer, e de se fazer ouvir muito mais.',
-          'Sempre que passo por algo importante, volto-me para a arte. A música tem sido a minha forma de exprimir a alegria de viver, mas também as dúvidas, os medos, as incertezas e os desesperos. Só que isto ficou tão grande que me tenho sentido incapaz de fazer música a partir daqui. Acabei por perceber que se calhar precisava de outra forma de me exprimir — e foi assim que a ideia de escrever a minha história começou a nascer. Mas isto é muito maior e mais importante do que a minha história. É a realidade de tanta gente, e sinto que devo tentar contar o máximo de histórias possível.',
-          'O que podemos aprender uns com os outros? O que é que tudo isto significa para outras pessoas? O que é ser mais gentil com quem teve a vida mudada para sempre depois de um diagnóstico? E de que forma é que isso mudaria coisas que nunca questionamos — como esperar dias, às vezes semanas, por uma chamada do hospital para marcar um exame, quando deixámos de saber fazer planos simples? O que é que essa espera nos faz por dentro? Que impacto tem esse ritual angustiante nos nossos resultados? Será que conseguimos ajudar quem decide a perceber melhor o nosso lado?',
-          'Ainda não sei bem em que é que isto vai dar, mas decidi conversar com pessoas que estão a passar por desafios parecidos, juntar o que me contam e contar a nossa história coletiva. Porque quero acreditar que conseguimos construir um mundo um bocadinho mais atento a todos, em qualquer fase da vida.',
-          'Se achas que devo ouvir a tua história, escreve-me. E se puderes, partilha isto com os teus amigos e nas redes sociais, para chegar a mais pessoas. Em breve há novidades!'
-        ],
-        instructions: [
-          { type: 'title', text: 'Quem procuro' },
-          { type: 'p', text: 'Qualquer pessoa cuja vida ficou dividida entre um antes e um depois por causa de um diagnóstico — e que ainda está a viver esse depois. Não precisa de ser uma doença que toda a gente conheça, nem precisas de já ter feito as pazes com ela. Cancro, AVC, transplante, uma doença crónica ou autoimune, tratamentos difíceis — ou foste tu a acompanhar de perto quem passou por isto.' },
-          { type: 'p', text: 'Quero a versão honesta, não a bonita. E se estás a pensar "a minha história não tem assim tanto que se diga" — é mesmo essa que quero ouvir.' },
-          { type: 'title', text: 'Conta-me a tua história' },
-          { type: 'email', before: 'Escreve-me para ', after: '. Umas linhas chegam para começar — o que aconteceu, o que mudou depois, e se estarias disponível para conversarmos. Escreve o que te apetecer, muito ou pouco; não há maneira errada de fazer isto.' },
-          { type: 'p', text: 'Fica tudo entre nós. Só partilho aquilo com que te sentires à vontade. Leio tudo, e volto a falar contigo depois do verão, em português ou inglês.' }
-        ]
-      }
+        actionBox: {
+          title: 'tell me your story',
+          blocks: [
+            { type: 'p', text: 'Anyone whose life split into a before and an after because of a diagnosis, and who\'s now living in the after. Cancer, stroke, transplant, a chronic or autoimmune condition, intensive treatment. Or you were the person beside someone going through it.' },
+            { type: 'p', text: 'You don\'t need a diagnosis people recognize, and you don\'t need to have made peace with it. I want the honest version, not the inspirational one. If you\'re thinking "my story isn\'t big enough," that\'s exactly the one I want to hear.' },
+            { type: 'email', before: 'Write to me at ', after: '' },
+            { type: 'p', text: 'A few lines is enough to start: what happened, what changed afterward, and whether you\'d be open to a conversation.' },
+            { type: 'p', text: 'Everything stays between us. I only share what you\'re okay with. I read every email, and I\'ll reach out after the summer, in Portuguese or English.' }
+          ]
+        }
     };
 
-    var email = 'isauramusic@gmail.com';
-
-    function renderStory(paragraphs) {
+    function renderParagraphs(paragraphs) {
       return paragraphs.map(function (text) {
         return '<p>' + text + '</p>';
       }).join('');
     }
 
-    function renderInstructions(blocks) {
+    function renderBlocks(blocks) {
       return blocks.map(function (block) {
-        if (block.type === 'title') {
-          return '<p class="section-title">' + block.text + '</p>';
-        }
         if (block.type === 'email') {
           return '<p>' + block.before + '<a href="mailto:' + email + '" class="email-highlight">' + email + '</a>' + block.after + '</p>';
         }
@@ -366,33 +505,78 @@
       }).join('');
     }
 
-    function updateLangButtons(lang) {
-      document.querySelectorAll('.lang-btn').forEach(function (btn) {
-        btn.classList.toggle('active', btn.dataset.lang === lang);
+    function renderNav(sections) {
+      return sections.map(function (section) {
+        return '<h1><button type="button" data-section="' + section.id + '">' + section.nav + '</button></h1>';
+      }).join('');
+    }
+
+    function renderActionBox(actionBox) {
+      return '<h3>' + actionBox.title + '</h3>' + renderBlocks(actionBox.blocks);
+    }
+
+    function updateNavState(sectionId) {
+      var nav = document.getElementById('section-nav');
+      document.querySelectorAll('.main-text button').forEach(function (button) {
+        button.classList.toggle('is-active', button.dataset.section === sectionId);
+      });
+      nav.classList.toggle('has-selection', !!sectionId);
+      document.querySelector('.page-header').classList.toggle('is-hidden', !!sectionId);
+    }
+
+    function resetView() {
+      activeSectionId = null;
+      var panel = document.getElementById('content-panel');
+      panel.innerHTML = '';
+      panel.classList.remove('is-visible');
+      document.getElementById('action-box').classList.remove('is-hidden');
+      updateNavState(null);
+    }
+
+    function showSection(sectionId, sections) {
+      var section = sections.find(function (item) {
+        return item.id === sectionId;
+      });
+      if (!section) {
+        return;
+      }
+
+      activeSectionId = sectionId;
+      var panel = document.getElementById('content-panel');
+      panel.innerHTML = renderParagraphs(section.paragraphs);
+      panel.classList.add('is-visible');
+      document.getElementById('action-box').classList.add('is-hidden');
+      updateNavState(sectionId);
+    }
+
+    function bindNav(sections) {
+      document.querySelectorAll('.main-text button').forEach(function (button) {
+        button.addEventListener('click', function () {
+          showSection(button.dataset.section, sections);
+        });
       });
     }
 
-    function setLanguage(lang) {
-      var content = copy[lang];
-      document.documentElement.lang = lang;
-      document.getElementById('meta-description').setAttribute('content', content.description);
-      document.getElementById('copy-h1').textContent = content.h1;
-      document.getElementById('copy-h2').textContent = content.h2;
-      document.getElementById('copy-story').innerHTML = renderStory(content.story);
-      document.getElementById('copy-instructions').innerHTML = renderInstructions(content.instructions);
-      localStorage.setItem('stories-lang', lang);
-      updateLangButtons(lang);
+    function bindOutsideClick() {
+      document.body.addEventListener('click', function (event) {
+        if (!activeSectionId) {
+          return;
+        }
+        if (event.target.closest('.main-text, .content-panel, .action-box, .footer-row, .page-header')) {
+          return;
+        }
+        resetView();
+      });
     }
 
-    document.getElementById('lang-en').addEventListener('click', function () {
-      setLanguage('en');
-    });
+    function initPage() {
+      document.getElementById('section-nav').innerHTML = renderNav(copy.sections);
+      document.getElementById('action-box').innerHTML = renderActionBox(copy.actionBox);
+      bindNav(copy.sections);
+      bindOutsideClick();
+    }
 
-    document.getElementById('lang-pt').addEventListener('click', function () {
-      setLanguage('pt');
-    });
-
-    setLanguage(localStorage.getItem('stories-lang') || 'en');
+    initPage();
   </script>
 </body>
 </html>
