@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M788KL9WG9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      wait_for_update: 500
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-M788KL9WG9');
+  </script>
+  <link rel="stylesheet" href="/consent.css">
+  <script src="/consent.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sanity — LinkedIn now locks me out</title>
+  <meta name="description" content="A Chrome extension that keeps LinkedIn useful for work without letting the feed eat the day.">
+  <meta property="og:title" content="sanity — LinkedIn now locks me out">
+  <meta property="og:description" content="A Chrome extension I built for myself. It keeps LinkedIn useful for work without letting the feed eat the day.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+
+    <section class="slide" id="hero">
+      <div class="slide-inner">
+        <p class="eyebrow">A Chrome extension I built for myself</p>
+        <h1 class="headline">LinkedIn now locks me out.</h1>
+        <p class="lede lede--tight">On purpose. After the minutes I asked for.</p>
+        <div class="visual">
+          <figure class="browser" aria-hidden="true">
+            <div class="browser-chrome">
+              <div class="traffic"><span></span><span></span><span></span></div>
+              <div class="tab"><span class="li-mark">in</span> Feed | LinkedIn</div>
+              <div class="urlbar"><span>linkedin.com/feed/</span><span class="ext">✻</span></div>
+            </div>
+            <div class="browser-body">
+              <div class="aurora a1"></div>
+              <div class="aurora a2"></div>
+              <div class="overlay">
+                <div class="overlay-top">
+                  <span class="overlay-brand"><span class="mark">✻</span>sanity</span>
+                  <span class="overlay-meta">2 of 45 minutes</span>
+                </div>
+                <h3>That’s <span class="it">enough</span>.</h3>
+                <p class="sub">LinkedIn still matters for the business. So does leaving it. Close the tab and go build.</p>
+                <p class="log-line">You came to <strong>check notifications</strong>. Asked for 10 min – stayed 1 min.</p>
+                <div class="actions">
+                  <span class="primary">Leave LinkedIn</span>
+                  <span class="secondary">An inspiring quote before I go</span>
+                  <span class="secondary">Check logs (1)</span>
+                  <div class="action-row">
+                    <span class="quiet">Five more minutes</span>
+                    <span class="quiet">Start another session</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </figure>
+        </div>
+      </div>
+      <footer class="slide-foot">
+        <a class="brand" href="/"><span class="mark">✻</span>sanity</a>
+        <span class="pageno">01</span>
+      </footer>
+    </section>
+
+    <section class="slide" id="why">
+      <div class="slide-inner">
+        <p class="eyebrow">02&nbsp;&nbsp;/&nbsp;&nbsp;Why it exists</p>
+        <h2 class="headline">I built it for myself.<br>I love LinkedIn<br>as much as I hate it.</h2>
+        <hr class="rule">
+        <p class="lede">It keeps LinkedIn useful for work without letting the feed eat the day. Built for people who need LinkedIn for GTM but can’t afford losing their sanity.</p>
+      </div>
+      <footer class="slide-foot">
+        <a class="brand" href="/"><span class="mark">✻</span>sanity</a>
+        <span class="pageno">02</span>
+      </footer>
+    </section>
+
+    <section class="slide" id="does">
+      <div class="slide-inner">
+        <p class="eyebrow">03&nbsp;&nbsp;/&nbsp;&nbsp;What it does</p>
+        <h2 class="headline">The whole thing, one page</h2>
+        <ol class="feature-list">
+          <li><span class="num">01</span> Asks what you’re there to do before LinkedIn loads.</li>
+          <li><span class="num">02</span> Six intents: message, post, research, inbox, notifications, scroll &amp; comment.</li>
+          <li><span class="num">03</span> A timer you set, 5 to 25 minutes.</li>
+          <li><span class="num">04</span> Countdown on the Chrome badge and in the popup.</li>
+          <li><span class="num">05</span> A soft bell at the end, then LinkedIn locks.</li>
+          <li><span class="num">06</span> Closing the tab early ends the session and logs how long you stayed.</li>
+          <li><span class="num">07</span> Daily limits on minutes and sessions, reset each local day.</li>
+          <li><span class="num">08</span> A one-hour pause, for when you really need it.</li>
+        </ol>
+      </div>
+      <footer class="slide-foot">
+        <a class="brand" href="/"><span class="mark">✻</span>sanity</a>
+        <span class="pageno">03</span>
+      </footer>
+    </section>
+
+    <section class="slide" id="gate">
+      <div class="slide-inner">
+        <p class="eyebrow">04&nbsp;&nbsp;/&nbsp;&nbsp;The gate</p>
+        <h2 class="headline">It asks before it opens</h2>
+        <p class="lede">When you open LinkedIn, Sanity asks what you’re there to do and for how long.</p>
+        <div class="visual">
+          <figure class="browser" aria-hidden="true">
+            <div class="browser-chrome">
+              <div class="traffic"><span></span><span></span><span></span></div>
+              <div class="tab"><span class="li-mark">in</span> Feed | LinkedIn</div>
+              <div class="urlbar"><span>linkedin.com/feed/</span><span class="ext">✻</span></div>
+            </div>
+            <div class="browser-body">
+              <div class="aurora a1"></div>
+              <div class="aurora a2"></div>
+              <div class="overlay">
+                <h3>What are you here to <span class="it">do?</span></h3>
+                <p class="sub">You already know how this tab ends. Name the job, set a clock, then get out.</p>
+                <div class="intents">
+                  <div class="intent is-on"><span class="label">Message someone</span><span class="hint">A real person. A real note.</span></div>
+                  <div class="intent"><span class="label">Publish a post</span><span class="hint">Write one thing. Then stop.</span></div>
+                  <div class="intent"><span class="label">Research a person</span><span class="hint">Find who you need. Then leave.</span></div>
+                  <div class="intent"><span class="label">Inbox only</span><span class="hint">Open messages. Reply. Leave.</span></div>
+                  <div class="intent"><span class="label">Check notifications</span><span class="hint">Scan the bell. Then leave.</span></div>
+                  <div class="intent is-danger"><span class="label"><span class="warn">⚠</span>Scroll &amp; comment</span><span class="hint">The slippery one. Proceed carefully.</span></div>
+                </div>
+                <p class="when">How long</p>
+                <div class="durations">
+                  <span class="duration">5 min</span>
+                  <span class="duration">10 min</span>
+                  <span class="duration is-on">15 min</span>
+                  <span class="duration">25 min</span>
+                  <span class="duration">43 min</span>
+                </div>
+                <span class="quiet">Not now</span>
+              </div>
+            </div>
+          </figure>
+        </div>
+      </div>
+      <footer class="slide-foot">
+        <a class="brand" href="/"><span class="mark">✻</span>sanity</a>
+        <span class="pageno">04</span>
+      </footer>
+    </section>
+
+    <section class="slide" id="intent">
+      <div class="slide-inner">
+        <p class="eyebrow">05&nbsp;&nbsp;/&nbsp;&nbsp;Intent and clock</p>
+        <h2 class="headline">Name the job, set a clock</h2>
+        <p class="lede">You pick an intent (message, post, research, inbox, notifications, or scroll &amp; comment) and a timer (5–25 min).</p>
+        <div class="visual">
+          <div class="ui-card" aria-hidden="true">
+            <div class="aurora a1"></div>
+            <div class="aurora a2"></div>
+            <div class="intents">
+              <div class="intent is-on"><span class="label">Message someone</span><span class="hint">A real person. A real note.</span></div>
+              <div class="intent"><span class="label">Publish a post</span><span class="hint">Write one thing. Then stop.</span></div>
+              <div class="intent"><span class="label">Research a person</span><span class="hint">Find who you need. Then leave.</span></div>
+              <div class="intent"><span class="label">Inbox only</span><span class="hint">Open messages. Reply. Leave.</span></div>
+              <div class="intent"><span class="label">Check notifications</span><span class="hint">Scan the bell. Then leave.</span></div>
+              <div class="intent is-danger"><span class="label"><span class="warn">⚠</span>Scroll &amp; comment</span><span class="hint">The slippery one. Proceed carefully.</span></div>
+            </div>
+            <p class="when">How long</p>
+            <div class="durations">
+              <span class="duration">5 min</span>
+              <span class="duration">10 min</span>
+              <span class="duration is-on">15 min</span>
+              <span class="duration">25 min</span>
+              <span class="duration">43 min</span>
+            </div>
+            <span class="quiet">Not now</span>
+          </div>
+        </div>
+      </div>
+      <footer class="slide-foot">
+        <a class="brand" href="/"><span class="mark">✻</span>sanity</a>
+        <span class="pageno">05</span>
+      </footer>
+    </section>
+
+    <section class="slide slide--dark" id="work">
+      <div class="slide-inner slide-inner--wide">
+        <p class="eyebrow">06&nbsp;&nbsp;/&nbsp;&nbsp;While you work</p>
+        <h2 class="headline">The clock lives in the toolbar</h2>
+        <p class="lede">LinkedIn then opens normally and the timer runs on the Chrome badge / popup.</p>
+        <div class="work-grid" aria-hidden="true">
+          <div>
+            <div class="badge-stage">
+              <div class="toolbar-chip">
+                <div class="ext-icon">✻</div>
+                <div class="time-pill">9:38</div>
+              </div>
+            </div>
+            <p class="caption">The badge counts down while you work.</p>
+          </div>
+          <div>
+            <div class="popup">
+              <header>
+                <p class="brand"><span class="mark">✻</span>sanity</p>
+                <div class="row-between" style="gap:8px">
+                  <p class="status">Running</p>
+                  <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="#5f6173">
+                    <path d="M19.14 12.94c.04-.31.06-.63.06-.94s-.02-.63-.06-.94l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.6-.22l-2.39.96a7.07 7.07 0 0 0-1.63-.94l-.36-2.54A.5.5 0 0 0 13.9 2h-3.8a.5.5 0 0 0-.49.42l-.36 2.54c-.59.24-1.13.55-1.63.94l-2.39-.96a.5.5 0 0 0-.6.22L2.71 8.48a.5.5 0 0 0 .12.64l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94L2.83 14.16a.5.5 0 0 0-.12.64l1.92 3.32c.14.24.43.34.68.22l2.39-.96c.5.39 1.04.7 1.63.94l.36 2.54c.05.24.25.42.49.42h3.8c.24 0 .44-.18.49-.42l.36-2.54c.59-.24 1.13-.55 1.63-.94l2.39.96c.25.12.54.02.68-.22l1.92-3.32a.5.5 0 0 0-.12-.64l-2.03-1.58zM12 15.5A3.5 3.5 0 1 1 12 8.5a3.5 3.5 0 0 1 0 7z"/>
+                  </svg>
+                </div>
+              </header>
+              <p class="kicker">Time left</p>
+              <p class="clock">9:48</p>
+              <p class="intent-name">Check notifications</p>
+              <span class="primary">End session &amp; lock</span>
+              <section class="today">
+                <div class="row-between">
+                  <p class="kicker">Today</p>
+                  <p class="usage">2 sessions · 1 / 45 min</p>
+                </div>
+                <div class="bar"><span></span></div>
+                <span class="btn-ghost">Check logs</span>
+              </section>
+              <footer class="danger">
+                <div class="row-between">
+                  <p class="kicker">Break glass</p>
+                  <span class="text-btn">Pause 1 hour</span>
+                </div>
+                <p class="hint">Turns sanity off for one hour.</p>
+              </footer>
+            </div>
+            <p class="caption">The popup shows the intent, the time left, and one button out.</p>
+          </div>
+        </div>
+      </div>
+      <footer class="slide-foot">
+        <a class="brand" href="/"><span class="mark">✻</span>sanity</a>
+        <span class="pageno">06</span>
+      </footer>
+    </section>
+
+    <section class="slide" id="lock">
+      <div class="slide-inner">
+        <p class="eyebrow">07&nbsp;&nbsp;/&nbsp;&nbsp;Time’s up</p>
+        <h2 class="headline">Then it locks</h2>
+        <p class="lede">When time’s up, a soft bell rings and LinkedIn locks until you leave or start another session.</p>
+        <div class="visual">
+          <figure class="browser" aria-hidden="true">
+            <div class="browser-chrome">
+              <div class="traffic"><span></span><span></span><span></span></div>
+              <div class="tab"><span class="li-mark">in</span> Feed | LinkedIn</div>
+              <div class="urlbar"><span>linkedin.com/feed/</span><span class="ext">✻</span></div>
+            </div>
+            <div class="browser-body">
+              <div class="aurora a1"></div>
+              <div class="aurora a2"></div>
+              <div class="overlay">
+                <div class="overlay-top">
+                  <span class="overlay-brand"><span class="mark">✻</span>sanity</span>
+                  <span class="overlay-meta">2 of 45 minutes</span>
+                </div>
+                <h3>That’s <span class="it">enough</span>.</h3>
+                <p class="sub">LinkedIn still matters for the business. So does leaving it. Close the tab and go build.</p>
+                <p class="log-line">You came to <strong>check notifications</strong>. Asked for 10 min – stayed 1 min.</p>
+                <div class="actions">
+                  <span class="primary">Leave LinkedIn</span>
+                  <span class="secondary">An inspiring quote before I go</span>
+                  <span class="secondary">Check logs (1)</span>
+                  <div class="action-row">
+                    <span class="quiet">Five more minutes</span>
+                    <span class="quiet">Start another session</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </figure>
+        </div>
+      </div>
+      <footer class="slide-foot">
+        <a class="brand" href="/"><span class="mark">✻</span>sanity</a>
+        <span class="pageno">07</span>
+      </footer>
+    </section>
+
+    <section class="slide" id="quote">
+      <div class="slide-inner">
+        <p class="eyebrow">08&nbsp;&nbsp;/&nbsp;&nbsp;On the way out</p>
+        <h2 class="headline">One detour allowed</h2>
+        <p class="lede">The lock screen offers a quote before you go. Then the tab closes.</p>
+        <div class="visual">
+          <div class="device" aria-hidden="true">
+            <div class="device-screen">
+              <div class="aurora a1"></div>
+              <div class="aurora a2"></div>
+              <div class="overlay-top">
+                <span class="overlay-brand"><span class="mark">✻</span>sanity</span>
+                <span class="overlay-meta">Not now</span>
+              </div>
+              <p class="quote-text">You are the sky. Everything else — it’s just the weather.</p>
+              <p class="quote-author">— Pema Chödrön</p>
+              <span class="primary">Leave LinkedIn</span>
+              <span class="quiet" style="margin-top:14px">Back</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="slide-foot">
+        <a class="brand" href="/"><span class="mark">✻</span>sanity</a>
+        <span class="pageno">08</span>
+      </footer>
+    </section>
+
+    <section class="slide" id="limits">
+      <div class="slide-inner">
+        <p class="eyebrow">09&nbsp;&nbsp;/&nbsp;&nbsp;Limits and break glass</p>
+        <h2 class="headline">You set the budget</h2>
+        <p class="lede">Daily limits (minutes + sessions) reset each local calendar day; you can pause sanity for an hour if you really need to. Closing the LinkedIn tab early ends the session and logs how long you stayed.</p>
+        <div class="visual">
+          <div class="ui-card settings-card" aria-hidden="true">
+            <div class="aurora a1"></div>
+            <div class="aurora a2"></div>
+            <h3>Settings</h3>
+            <p class="sub">Contain LinkedIn without quitting it.</p>
+            <div class="setting-row"><span>Daily budget</span><span class="pill">45 min ▾</span></div>
+            <div class="setting-row"><span>Default session</span><span class="pill">15 min ▾</span></div>
+            <div class="stepper-block">
+              <div class="stepper-head">
+                <p class="when" style="margin:0">Sessions / day</p>
+                <span class="usage">Unlimited</span>
+              </div>
+              <p class="stepper-hint">How many LinkedIn visits you allow yourself.</p>
+              <div class="stepper">
+                <span class="stepper-btn">−</span>
+                <p class="stepper-value">Unlimited</p>
+                <span class="stepper-btn">+</span>
+              </div>
+            </div>
+            <span class="primary" style="margin-top:28px">Done</span>
+          </div>
+        </div>
+      </div>
+      <footer class="slide-foot">
+        <a class="brand" href="/"><span class="mark">✻</span>sanity</a>
+        <span class="pageno">09</span>
+      </footer>
+    </section>
+
+    <section class="slide slide--dark" id="get">
+      <div class="slide-inner">
+        <p class="eyebrow">10&nbsp;&nbsp;/&nbsp;&nbsp;How to get it</p>
+        <div class="center-copy">
+          <h2 class="headline">It’s free. Ask and I’ll send it.</h2>
+          <p class="lede">I’m not a developer, so it isn’t on the Chrome store. Installing takes about a minute and I’ll walk you through it.</p>
+          <div class="built-by">
+            <span class="wordmark"><span class="mark">✻</span>sanity</span>
+            <span class="byline">Built by Isaura Santos</span>
+          </div>
+          <a class="download" href="sanity.zip" download>Download sanity</a>
+        </div>
+      </div>
+      <footer class="slide-foot">
+        <span class="meta-line">Chrome extension · Free</span>
+        <span class="pageno">10</span>
+      </footer>
+    </section>
+
+    <section class="slide" id="install">
+      <div class="slide-inner slide-inner--wide">
+        <p class="eyebrow">11&nbsp;&nbsp;/&nbsp;&nbsp;Install</p>
+        <h2 class="headline">Four steps, one minute</h2>
+        <ol class="install-list">
+          <li><span class="num">01</span><span><a href="sanity.zip" download>Save the sanity folder</a> somewhere on your computer.</span></li>
+          <li><span class="num">02</span><span>Open <code>chrome://extensions/</code>.</span></li>
+          <li><span class="num">03</span><span>Turn on <strong>Developer mode</strong>.</span></li>
+          <li><span class="num">04</span><span>Click <strong>Load unpacked</strong> and select the sanity folder.</span></li>
+        </ol>
+        <div class="shot">
+          <img src="assets/chrome-extensions.png" alt="Chrome extensions page with Developer mode and Load unpacked highlighted">
+        </div>
+      </div>
+      <footer class="slide-foot">
+        <a class="brand" href="/"><span class="mark">✻</span>sanity</a>
+        <span class="pageno">11</span>
+      </footer>
+    </section>
+
+    <section class="slide" id="pin">
+      <div class="slide-inner slide-inner--wide">
+        <p class="eyebrow">12&nbsp;&nbsp;/&nbsp;&nbsp;Last step</p>
+        <h2 class="headline">Pin it so you see the timer</h2>
+        <p class="lede">Click the extensions icon in Chrome’s toolbar and pin sanity. Then open LinkedIn — it will ask what you’re there to do.</p>
+        <div class="visual">
+          <div class="shot">
+            <img src="assets/chrome-pin.png" alt="Chrome extensions menu with sanity and the pin icon highlighted">
+          </div>
+        </div>
+      </div>
+      <footer class="slide-foot">
+        <a class="brand" href="/"><span class="mark">✻</span>sanity</a>
+        <span class="pageno">12</span>
+      </footer>
+    </section>
+
+  </main>
+</body>
+</html>

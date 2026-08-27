@@ -57,41 +57,23 @@
       align-self: flex-start;
     }
 
-    .portfolio {
-      display: flex;
-      flex-direction: column;
-      gap: 48px;
-      align-self: flex-start;
-    }
-
-    .portfolio-item {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 16px;
-      color: inherit;
-      text-decoration: none;
-      transition: opacity 0.2s;
-      width: fit-content;
-    }
-
-    .portfolio-item:hover {
-      opacity: 0.7;
-    }
-
-    .portfolio-preview {
-      width: 240px;
-      height: 240px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .portfolio-title {
+    .main-text h1 {
       font-size: 48px;
       font-weight: 400;
       line-height: 1.4;
+      margin: 0;
       letter-spacing: -0.02em;
       text-align: left;
+    }
+
+    .main-text h1 a {
+      color: inherit;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .main-text h1 a:hover {
+      opacity: 0.7;
     }
 
     .social-icon {
@@ -174,13 +156,8 @@
         padding: 24px;
       }
 
-      .portfolio-title {
+      .main-text h1 {
         font-size: 36px;
-      }
-
-      .portfolio-preview {
-        width: 180px;
-        height: 180px;
       }
 
       .social-icons {
@@ -215,11 +192,9 @@
 </head>
 <body>
   <div class="content">
-    <div class="portfolio">
-      <a class="portfolio-item" href="/books/">
-        <img class="portfolio-preview" src="what-book.jpg" alt="" width="240" height="240">
-        <span class="portfolio-title">what book should I read next?</span>
-      </a>
+    <div class="main-text">
+      <h1><a href="/books/">what book should I read next?</a></h1>
+      <h1><a href="/sanity/">sanity</a></h1>
     </div>
 
     <div class="footer-row">
