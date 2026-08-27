@@ -14,7 +14,10 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+}
 
 body {
   margin: 0;
@@ -414,6 +417,13 @@ h2 {
 }
 
 /* Download / Beehiiv */
+#download {
+  min-height: calc(100svh - 72px);
+  display: flex;
+  align-items: center;
+  scroll-margin-top: 72px;
+}
+
 .download-gate {
   width: min(560px, 100%);
   margin: 0 auto;
