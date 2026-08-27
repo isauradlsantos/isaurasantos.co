@@ -22,8 +22,8 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
   <meta name="theme-color" content="#000000"/>
-  <meta name="description" content="Isaura Santos - Personal website"/>
-  <title>Isaura Santos</title>
+  <meta name="description" content="Random stuff — experiments by Isaura Santos"/>
+  <title>random stuff — Isaura Santos</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" href="/favicon.svg">
   <style>
@@ -57,110 +57,41 @@
       align-self: flex-start;
     }
 
-    .main-text h1 {
-      font-size: 48px;
-      font-weight: 400;
-      line-height: 1.4;
-      margin: 0;
-      letter-spacing: -0.02em;
-      text-align: left;
+    .portfolio {
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+      align-self: flex-start;
     }
 
-    .main-text h1 a {
+    .portfolio-item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
       color: inherit;
       text-decoration: none;
-      transition: opacity 0.2s;
-    }
-
-    .main-text h1 a:hover {
-      opacity: 0.7;
-    }
-
-    .music-icons {
-      display: inline-flex;
-      gap: 16px;
-      align-items: center;
-      margin-left: 16px;
-      vertical-align: middle;
-    }
-
-    .music-icon {
-      width: 24px;
-      height: 24px;
-      stroke: #ffffff;
-      fill: none;
-      stroke-width: 1.5;
-      cursor: pointer;
-      transition: opacity 0.2s;
-    }
-
-    .music-icon:hover {
-      opacity: 0.7;
-    }
-
-    .artist-line {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .artist-menu {
-      position: relative;
-      display: inline-block;
-      cursor: pointer;
       transition: opacity 0.2s;
       width: fit-content;
     }
 
-    .artist-menu:hover {
+    .portfolio-item:hover {
       opacity: 0.7;
     }
 
-    .artist-menu:hover .artist-submenu,
-    .artist-submenu:hover {
+    .portfolio-preview {
+      width: 240px;
+      height: 240px;
+      object-fit: cover;
       display: block;
     }
 
-    .artist-submenu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      right: 0;
-      margin-top: 0;
-      padding-top: 12px;
-      padding-bottom: 4px;
-      background-color: transparent;
-      z-index: 1000;
-      min-width: 120px;
-      text-align: right;
-      white-space: nowrap;
-    }
-
-    .artist-submenu::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -20px;
-      right: -20px;
-      height: 12px;
-      background: transparent;
-    }
-
-    .artist-submenu a {
-      display: block;
-      color: #ffffff;
-      text-decoration: none;
-      font-size: 20px;
+    .portfolio-title {
+      font-size: 48px;
       font-weight: 400;
-      line-height: 1.6;
+      line-height: 1.4;
       letter-spacing: -0.02em;
-      padding: 6px 0;
-      transition: opacity 0.2s;
-      white-space: nowrap;
-    }
-
-    .artist-submenu a:hover {
-      opacity: 0.7;
+      text-align: left;
     }
 
     .social-icon {
@@ -238,19 +169,18 @@
       opacity: 0.7;
     }
 
-    .music-link {
-      display: inline-block;
-      text-decoration: none;
-      color: inherit;
-    }
-
     @media (max-width: 768px) {
       body {
         padding: 24px;
       }
 
-      .main-text h1 {
+      .portfolio-title {
         font-size: 36px;
+      }
+
+      .portfolio-preview {
+        width: 180px;
+        height: 180px;
       }
 
       .social-icons {
@@ -260,38 +190,6 @@
       .social-icon {
         width: 20px;
         height: 20px;
-      }
-
-      .music-icon {
-        width: 20px;
-        height: 20px;
-      }
-
-      .music-icons {
-        gap: 12px;
-        margin-left: 12px;
-      }
-
-      .artist-menu {
-        display: block;
-      }
-
-      .artist-submenu {
-        display: block;
-        position: static;
-        margin-top: 8px;
-        padding-top: 0;
-        padding-bottom: 0;
-        text-align: right;
-      }
-
-      .artist-submenu::before {
-        display: none;
-      }
-
-      .artist-submenu a {
-        font-size: 18px;
-        opacity: 0.7;
       }
 
       .book-call {
@@ -317,23 +215,11 @@
 </head>
 <body>
   <div class="content">
-    <div class="main-text">
-      <h1><a href="https://30labs.co" target="_blank" rel="noopener noreferrer">30labs.co</a></h1>
-      <h1><a href="https://www.kyojihealth.com/" target="_blank" rel="noopener noreferrer">kyoji health</a></h1>
-      <h1><a href="http://loopremote.com" target="_blank" rel="noopener noreferrer">loop remote</a></h1>
-      <h1><a href="https://www.bodymap.co/" target="_blank" rel="noopener noreferrer">body map</a></h1>
-      <h1><a href="https://www.lazy-ops.com" target="_blank" rel="noopener noreferrer">lazy ops</a></h1>
-      <h1><a href="/sanity/">sanity</a></h1>
-      <h1><a href="/randomstuff/">random stuff</a></h1>
-      <h1 class="artist-menu">
-        my artist alter ego
-        <div class="artist-submenu">
-          <a href="https://open.spotify.com/artist/2oiBFya19iAwi0SCaltq1F?si=amwLQFgAQ7O9e4vRUuX6gA" target="_blank" rel="noopener noreferrer">spotify</a>
-          <a href="https://music.apple.com/pt/artist/isaura/328623554?l=en-GB" target="_blank" rel="noopener noreferrer">apple music</a>
-          <a href="https://tidal.com/artist/3642913" target="_blank" rel="noopener noreferrer">tidal</a>
-          <a href="https://www.youtube.com/@isauramusic" target="_blank" rel="noopener noreferrer">youtube</a>
-        </div>
-      </h1>
+    <div class="portfolio">
+      <a class="portfolio-item" href="/books/">
+        <img class="portfolio-preview" src="what-book.jpg" alt="" width="240" height="240">
+        <span class="portfolio-title">what book should I read next?</span>
+      </a>
     </div>
 
     <div class="footer-row">
