@@ -440,6 +440,7 @@ h2 {
 .legal-links {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 8px 20px;
   margin-top: 18px;
   font-size: 13px;
