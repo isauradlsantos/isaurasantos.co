@@ -1,4 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <rect width="32" height="32" rx="8" fill="#16182d"/>
-  <text x="16" y="22" text-anchor="middle" fill="#f7f5f0" font-size="16" font-family="Georgia, serif">;</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Sanity">
+  <rect width="32" height="32" fill="#f7f5f0"/>
+  <g fill="#16182d" transform="translate(16 16)">
+    <circle r="2.2"/>
+    <path d="M0-4.5c.6-.9 1.9-4.2 1.9-6.1a1.9 1.9 0 1 0-3.8 0c0 1.9 1.3 5.2 1.9 6.1z"/>
+    <path d="M0-4.5c.6-.9 1.9-4.2 1.9-6.1a1.9 1.9 0 1 0-3.8 0c0 1.9 1.3 5.2 1.9 6.1z" transform="rotate(60)"/>
+    <path d="M0-4.5c.6-.9 1.9-4.2 1.9-6.1a1.9 1.9 0 1 0-3.8 0c0 1.9 1.3 5.2 1.9 6.1z" transform="rotate(120)"/>
+    <path d="M0-4.5c.6-.9 1.9-4.2 1.9-6.1a1.9 1.9 0 1 0-3.8 0c0 1.9 1.3 5.2 1.9 6.1z" transform="rotate(180)"/>
+    <path d="M0-4.5c.6-.9 1.9-4.2 1.9-6.1a1.9 1.9 0 1 0-3.8 0c0 1.9 1.3 5.2 1.9 6.1z" transform="rotate(240)"/>
+    <path d="M0-4.5c.6-.9 1.9-4.2 1.9-6.1a1.9 1.9 0 1 0-3.8 0c0 1.9 1.3 5.2 1.9 6.1z" transform="rotate(300)"/>
+  </g>
 </svg>
