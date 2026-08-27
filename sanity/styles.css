@@ -153,6 +153,17 @@ h1 {
   margin-top: 28px;
 }
 
+.thanks {
+  padding: 72px 0 32px;
+}
+
+.thanks-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
 .trust {
   display: flex;
   flex-wrap: wrap;
@@ -402,21 +413,14 @@ h2 {
   font-size: 15px;
 }
 
-/* CTA */
-.cta {
-  text-align: center;
-  padding: 88px 0;
-  background: var(--ink);
-  color: var(--paper);
+/* Download / Beehiiv */
+.download-gate {
+  width: min(560px, 100%);
+  margin: 0 auto;
 }
 
-.cta h2 {
-  color: var(--paper);
-}
-
-.cta p {
-  margin: 12px 0 28px;
-  color: rgba(247, 245, 240, 0.62);
+.download-gate iframe {
+  max-width: 100%;
 }
 
 /* Footer */
@@ -440,7 +444,6 @@ h2 {
 .legal-links {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 8px 20px;
   margin-top: 18px;
   font-size: 13px;
@@ -889,7 +892,8 @@ figure {
     padding-bottom: 260px;
   }
 
-  #install {
+  #install,
+  #download {
     padding-bottom: 120px;
   }
 
