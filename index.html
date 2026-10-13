@@ -104,12 +104,37 @@
       gap: 16px;
     }
 
+    .secondary {
+      display: flex;
+      flex-direction: column;
+      margin-top: 56px;
+    }
+
+    .secondary-link,
+    .artist-menu {
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 1.4;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+    }
+
+    .secondary-link {
+      text-decoration: none;
+      width: fit-content;
+      transition: opacity 0.2s;
+    }
+
+    .secondary-link:hover {
+      opacity: 0.7;
+    }
+
     .artist-menu {
       position: relative;
       display: inline-block;
       cursor: pointer;
-      transition: opacity 0.2s;
       width: fit-content;
+      transition: opacity 0.2s;
     }
 
     .artist-menu:hover {
@@ -272,6 +297,15 @@
         margin-left: 12px;
       }
 
+      .secondary {
+        margin-top: 40px;
+      }
+
+      .secondary-link,
+      .artist-menu {
+        font-size: 22px;
+      }
+
       .artist-menu {
         display: block;
       }
@@ -318,21 +352,22 @@
 <body>
   <div class="content">
     <div class="main-text">
-      <h1><a href="https://30labs.co" target="_blank" rel="noopener noreferrer">30labs.co</a></h1>
-      <h1><a href="https://www.kyojihealth.com/" target="_blank" rel="noopener noreferrer">kyoji health</a></h1>
+      <h1><a href="https://archiohealth.com" target="_blank" rel="noopener noreferrer">archio health</a></h1>
       <h1><a href="http://loopremote.com" target="_blank" rel="noopener noreferrer">loop remote</a></h1>
       <h1><a href="https://www.bodymap.co/" target="_blank" rel="noopener noreferrer">body map</a></h1>
       <h1><a href="https://www.lazy-ops.com" target="_blank" rel="noopener noreferrer">lazy ops</a></h1>
-      <h1><a href="/randomstuff/">random stuff</a></h1>
-      <h1 class="artist-menu">
-        my artist alter ego
-        <div class="artist-submenu">
-          <a href="https://open.spotify.com/artist/2oiBFya19iAwi0SCaltq1F?si=amwLQFgAQ7O9e4vRUuX6gA" target="_blank" rel="noopener noreferrer">spotify</a>
-          <a href="https://music.apple.com/pt/artist/isaura/328623554?l=en-GB" target="_blank" rel="noopener noreferrer">apple music</a>
-          <a href="https://tidal.com/artist/3642913" target="_blank" rel="noopener noreferrer">tidal</a>
-          <a href="https://www.youtube.com/@isauramusic" target="_blank" rel="noopener noreferrer">youtube</a>
+      <div class="secondary">
+        <a href="/randomstuff/" class="secondary-link">random stuff</a>
+        <div class="artist-menu">
+          my artist alter ego
+          <div class="artist-submenu">
+            <a href="https://open.spotify.com/artist/2oiBFya19iAwi0SCaltq1F?si=amwLQFgAQ7O9e4vRUuX6gA" target="_blank" rel="noopener noreferrer">spotify</a>
+            <a href="https://music.apple.com/pt/artist/isaura/328623554?l=en-GB" target="_blank" rel="noopener noreferrer">apple music</a>
+            <a href="https://tidal.com/artist/3642913" target="_blank" rel="noopener noreferrer">tidal</a>
+            <a href="https://www.youtube.com/@isauramusic" target="_blank" rel="noopener noreferrer">youtube</a>
+          </div>
         </div>
-      </h1>
+      </div>
     </div>
 
     <div class="footer-row">
@@ -357,7 +392,6 @@
           </svg>
         </a>
         <a href="https://tidycal.com/isaurasantos/30-minute-meeting-with-isaura" target="_blank" rel="noopener noreferrer" class="book-call">book a call</a>
-        <a href="/twnya/" class="book-call">creative mentorship</a>
       </div>
       <div class="legal-links">
         <a href="/privacy.html">privacy policy</a>
