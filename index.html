@@ -54,7 +54,8 @@
       display: flex;
       flex-direction: column;
       gap: 0;
-      align-self: flex-start;
+      align-self: stretch;
+      width: 100%;
     }
 
     .main-text h1 {
@@ -107,7 +108,11 @@
     .secondary {
       display: flex;
       flex-direction: column;
+      align-items: flex-end;
+      align-self: flex-end;
+      width: fit-content;
       margin-top: 56px;
+      text-align: right;
     }
 
     .secondary-link,
@@ -357,7 +362,7 @@
       <h1><a href="https://www.bodymap.co/" target="_blank" rel="noopener noreferrer">body map</a></h1>
       <h1><a href="https://www.lazy-ops.com" target="_blank" rel="noopener noreferrer">lazy ops</a></h1>
       <div class="secondary">
-        <a href="/randomstuff/" class="secondary-link">random stuff</a>
+        <a href="/randomstuff/" class="secondary-link">small projects</a>
         <div class="artist-menu">
           my artist alter ego
           <div class="artist-submenu">
